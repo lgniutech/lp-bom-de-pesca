@@ -8,7 +8,7 @@ export default function Home() {
     <>
       {/* JSON-LD mantido estrito para SEO */}
       <script
-        type="application/ld+json"
+        type="application/ld+json" 
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
