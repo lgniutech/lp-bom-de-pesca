@@ -23,3 +23,11 @@
 **Consequência:** Aplicação offline.
 **Correção aplicada:** Fazer chamada à API do GitHub (endpoints `/comments`, `/statuses` e `/check-runs`) usando o PAT do repositório para extrair o log exato de erro gerado pelo bot do Vercel.
 **Lição:** Consultar a API do GitHub do repositório permite capturar a causa exata enviada pelos webhooks e bots de CI/CD da Vercel.
+
+## 📅 31/07/2026 — Erro Persistente no Deploy / Teste em Conta Alternativa
+
+**Contexto:** Quarto disparo de deploy no repositório `Techweniu/lp-bom-de-pesca`.
+**Erro:** Deploy continua com falha na Vercel da conta atual. Usuário optou por testar em repositório/conta alternativa.
+**Consequência:** Projeto em espera pela nova URL/PAT de teste.
+**Correção aplicada:** Registrar ocorrência e aguardar novos dados de conta/repositório para isolamento da falha.
+**Lição:** Testar o build em um projeto Vercel zerado e em conta limpa permite isolar problemas de cache ou configurações legadas de ambiente no painel da Vercel.

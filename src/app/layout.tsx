@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Acesse novidades e promoções direto no seu WhatsApp.",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/images/logo.webp",
         width: 800,
         height: 600,
         alt: "Logotipo Bom de Pesca",
