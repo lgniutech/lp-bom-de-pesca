@@ -44,7 +44,7 @@ export default function TorneioCards() {
       {/* 2. Inscrição do 4º Torneio */}
       <AnimateOnScroll direction="right">
         <Link
-          href="https://docs.google.com/document/d/1HCPKGtcL_QngMOCyJ80D8-nDztn15Y6p/edit?usp=sharing&ouid=107134223951595158811&rtpof=true&sd=true"
+          href="https://drive.google.com/file/d/1HCPKGtcL_QngMOCyJ80D8-nDztn15Y6p/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative w-full max-w-5xl mx-auto bg-[#1a1b2e] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 transition-all hover:scale-[1.01] hover:border-[#f26419]/50 block"
