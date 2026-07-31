@@ -1,0 +1,147 @@
+{
+  "eslint.config.mjs": {
+    "mtime": 1785496762.0978796,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "next.config.ts": {
+    "mtime": 1785496762.116034,
+    "ast_hash": "9b77af189a21a7a64e4bd7a426f64176",
+    "semantic_hash": "9b77af189a21a7a64e4bd7a426f64176"
+  },
+  "package.json": {
+    "mtime": 1785496762.1434164,
+    "ast_hash": "596dd994b812111a09f0a9613214e3f4",
+    "semantic_hash": "596dd994b812111a09f0a9613214e3f4"
+  },
+  "postcss.config.mjs": {
+    "mtime": 1785496762.158186,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "src/app/layout.tsx": {
+    "mtime": 1785496762.3528788,
+    "ast_hash": "399a489a861548fdd29ed5809db47aa6",
+    "semantic_hash": "399a489a861548fdd29ed5809db47aa6"
+  },
+  "src/app/page.tsx": {
+    "mtime": 1785497115.2716076,
+    "ast_hash": "4b52490c3439644fe592bcb60cfa6216",
+    "semantic_hash": ""
+  },
+  "src/components/AnimateOnScroll.tsx": {
+    "mtime": 1785496762.3895507,
+    "ast_hash": "4e31b78789bff0fa34c530e6a4986795",
+    "semantic_hash": "4e31b78789bff0fa34c530e6a4986795"
+  },
+  "src/components/ComunityCard.tsx": {
+    "mtime": 1785497093.7429457,
+    "ast_hash": "a538e26d1987515652fd15edf7041526",
+    "semantic_hash": ""
+  },
+  "src/components/ContactCard.tsx": {
+    "mtime": 1785496762.412895,
+    "ast_hash": "ad5b1fe63caa0d7b833ff1a18010e32a",
+    "semantic_hash": "ad5b1fe63caa0d7b833ff1a18010e32a"
+  },
+  "src/components/Header.tsx": {
+    "mtime": 1785496762.4233391,
+    "ast_hash": "e8a270314978923ce7b96d0a5d2c3814",
+    "semantic_hash": "e8a270314978923ce7b96d0a5d2c3814"
+  },
+  "tsconfig.json": {
+    "mtime": 1785496762.1682305,
+    "ast_hash": "ee17fd1c97c735e9f3564e3f5251f125",
+    "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
+  },
+  "skills-lock.json": {
+    "mtime": 1785496899.8700173,
+    "ast_hash": "39d31649a75baba9e5acfa891dd291ff",
+    "semantic_hash": ""
+  },
+  "src/components/TorneioCards.tsx": {
+    "mtime": 1785497105.4815073,
+    "ast_hash": "cf265f15e4ebc0362ff825075967aaba",
+    "semantic_hash": ""
+  },
+  "GEMINI.md": {
+    "mtime": 1785496871.6296015,
+    "ast_hash": "acb0b4bc02b271adc7512a375abb59bf",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1785496762.0780003,
+    "ast_hash": "9904817e1d93e08d6098933b5322b5e2",
+    "semantic_hash": ""
+  },
+  "central-de-aprendizagem/erros-e-licoes.md": {
+    "mtime": 1785496881.6349692,
+    "ast_hash": "f6664323b3257714aa83a5ae6b695edd",
+    "semantic_hash": ""
+  },
+  "contexto/projeto.md": {
+    "mtime": 1785496879.095576,
+    "ast_hash": "5ebfdb94c0c9c3fc70e6d0ae28e91538",
+    "semantic_hash": ""
+  },
+  "historico/explicacoes.md": {
+    "mtime": 1785496883.2699993,
+    "ast_hash": "dde2c6b8ec0e221e222f69f524715c1e",
+    "semantic_hash": ""
+  },
+  "public/file.svg": {
+    "mtime": 1785496762.187081,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "public/globe.svg": {
+    "mtime": 1785496762.20262,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "public/images/background.webp": {
+    "mtime": 1785496762.2576244,
+    "ast_hash": "3eba6ceccbe24a7aa35a51b77211ec27",
+    "semantic_hash": ""
+  },
+  "public/images/brasao-4-torneio.jpg": {
+    "mtime": 1785496976.7382076,
+    "ast_hash": "d4d7553cdce38bdf97005a467951c070",
+    "semantic_hash": ""
+  },
+  "public/images/carla-joao.webp": {
+    "mtime": 1785496762.274696,
+    "ast_hash": "77200404a7edbb16d2702b71dbcb0c0a",
+    "semantic_hash": ""
+  },
+  "public/images/inspiracao-torneio.png": {
+    "mtime": 1785496976.7349684,
+    "ast_hash": "0ad302ea033c3b04a1494b24244dc9fe",
+    "semantic_hash": ""
+  },
+  "public/images/logo.webp": {
+    "mtime": 1785496762.2993252,
+    "ast_hash": "a41b1e345b135f53d6d1f3b1190f5c05",
+    "semantic_hash": ""
+  },
+  "public/next.svg": {
+    "mtime": 1785496762.2140713,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "public/vercel.svg": {
+    "mtime": 1785496762.226793,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "public/window.svg": {
+    "mtime": 1785496762.23908,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "src/app/icon.png": {
+    "mtime": 1785496762.3443305,
+    "ast_hash": "a41b1e345b135f53d6d1f3b1190f5c05",
+    "semantic_hash": ""
+  }
+}
