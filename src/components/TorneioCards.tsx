@@ -41,24 +41,27 @@ export default function TorneioCards() {
         </Link>
       </AnimateOnScroll>
 
-      {/* 2. Inscrição do 4º Torneio (Em Desenvolvimento) */}
+      {/* 2. Inscrição do 4º Torneio */}
       <AnimateOnScroll direction="right">
-        <div className="relative w-full max-w-5xl mx-auto bg-[#1a1b2e] rounded-[2rem] overflow-hidden shadow-2xl border border-amber-500/30">
+        <Link
+          href="https://docs.google.com/document/d/1HCPKGtcL_QngMOCyJ80D8-nDztn15Y6p/edit?usp=sharing&ouid=107134223951595158811&rtpof=true&sd=true"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative w-full max-w-5xl mx-auto bg-[#1a1b2e] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 transition-all hover:scale-[1.01] hover:border-[#f26419]/50 block"
+          aria-label="Acessar Ficha de Inscrição do 4º Torneio Bom de Pesca"
+        >
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between py-8 md:py-10 px-6 md:px-12 gap-8">
             <div className="max-w-xl w-full">
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl" aria-hidden="true">📝</span>
-                <span className="text-amber-400 font-bold uppercase tracking-wider text-xs md:text-sm bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
-                  Ficha em Desenvolvimento
+                <span className="text-[#f26419] font-bold uppercase tracking-wider text-xs md:text-sm">
+                  Ficha de Inscrição Oficial
                 </span>
               </div>
-              <div className="w-16 h-1 bg-amber-500 rounded-full mb-6"></div>
-              <h2 className="text-2xl md:text-3xl font-bold leading-snug text-white mb-3">
-                Ficha de <span className="text-amber-400">inscrição</span> para o <span className="text-[#f26419]">4º Torneio Bom de Pesca</span>
+              <div className="w-16 h-1 bg-[#f26419] rounded-full mb-6"></div>
+              <h2 className="text-2xl md:text-3xl font-bold leading-snug text-white">
+                Clique aqui e faça sua <span className="text-[#f26419] underline decoration-[#f26419]/50">inscrição</span> para o nosso <span className="text-[#f26419]">4º Torneio Bom de Pesca</span>
               </h2>
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                A ficha de inscrição está em fase de preparação. Assim que for liberada, o link de acesso será disponibilizado neste espaço!
-              </p>
             </div>
 
             <div className="relative w-48 md:w-60 aspect-square flex-shrink-0 flex items-center justify-center p-2">
@@ -67,11 +70,11 @@ export default function TorneioCards() {
                 alt="Brasão 4º Torneio Bom de Pesca"
                 width={240}
                 height={240}
-                className="object-contain max-h-full opacity-90 drop-shadow-[0_10px_25px_rgba(0,0,0,0.65)]"
+                className="object-contain max-h-full transition-all duration-300 drop-shadow-[0_10px_25px_rgba(0,0,0,0.65)] group-hover:scale-105 group-hover:drop-shadow-[0_15px_30px_rgba(242,100,25,0.4)]"
               />
             </div>
           </div>
-        </div>
+        </Link>
       </AnimateOnScroll>
 
       {/* 3. Grupo de Avisos do 4º Torneio */}
