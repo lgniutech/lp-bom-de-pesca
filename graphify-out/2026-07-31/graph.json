@@ -153,8 +153,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "package_dependencies",
-      "community": 12,
-      "community_name": "dependencies",
+      "community": 4,
+      "community_name": "package.json",
       "norm_label": "dependencies"
     },
     {
@@ -164,8 +164,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "package_dependencies_next",
-      "community": 12,
-      "community_name": "dependencies",
+      "community": 4,
+      "community_name": "package.json",
       "norm_label": "next"
     },
     {
@@ -175,8 +175,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "next",
-      "community": 12,
-      "community_name": "dependencies",
+      "community": 4,
+      "community_name": "package.json",
       "norm_label": "next"
     },
     {
@@ -186,8 +186,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "package_dependencies_react",
-      "community": 12,
-      "community_name": "dependencies",
+      "community": 4,
+      "community_name": "package.json",
       "norm_label": "react"
     },
     {
@@ -197,8 +197,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "react",
-      "community": 12,
-      "community_name": "dependencies",
+      "community": 4,
+      "community_name": "package.json",
       "norm_label": "react"
     },
     {
@@ -208,8 +208,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "package_dependencies_react_dom",
-      "community": 12,
-      "community_name": "dependencies",
+      "community": 4,
+      "community_name": "package.json",
       "norm_label": "react-dom"
     },
     {
@@ -219,8 +219,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "react_dom",
-      "community": 12,
-      "community_name": "dependencies",
+      "community": 4,
+      "community_name": "package.json",
       "norm_label": "react-dom"
     },
     {
@@ -939,37 +939,48 @@
       "norm_label": "node_modules"
     },
     {
-      "label": "AGENTS.md",
+      "label": "GEMINI.md",
       "file_type": "document",
-      "source_file": "AGENTS.md",
+      "source_file": "GEMINI.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "agents",
-      "community": 13,
-      "community_name": "AGENTS.md",
-      "norm_label": "agents.md"
+      "id": "gemini",
+      "community": 12,
+      "community_name": "GEMINI.md",
+      "norm_label": "gemini.md"
+    },
+    {
+      "label": "GEMINI.md - Regras do Workspace",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "gemini_gemini_md_regras_do_workspace",
+      "community": 12,
+      "community_name": "GEMINI.md",
+      "norm_label": "gemini.md - regras do workspace"
     },
     {
       "label": "This is NOT the Next.js you know",
       "file_type": "document",
-      "source_file": "AGENTS.md",
-      "source_location": "L2",
+      "source_file": "GEMINI.md",
+      "source_location": "L4",
       "_origin": "ast",
-      "id": "agents_this_is_not_the_next_js_you_know",
-      "community": 13,
-      "community_name": "AGENTS.md",
+      "id": "gemini_this_is_not_the_next_js_you_know",
+      "community": 12,
+      "community_name": "GEMINI.md",
       "norm_label": "this is not the next.js you know"
     },
     {
-      "label": "CLAUDE.md",
+      "label": "Code-Review-Graph",
       "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "L1",
+      "source_file": "GEMINI.md",
+      "source_location": "L9",
       "_origin": "ast",
-      "id": "claude",
-      "community": 15,
-      "community_name": "CLAUDE.md",
-      "norm_label": "claude.md"
+      "id": "gemini_code_review_graph",
+      "community": 12,
+      "community_name": "GEMINI.md",
+      "norm_label": "code-review-graph"
     },
     {
       "label": "README.md",
@@ -1034,7 +1045,7 @@
       "_origin": "ast",
       "id": "central_de_aprendizagem_erros_e_licoes",
       "community": 14,
-      "community_name": "Central de Aprendizagem \u2014 Erros e Li\u00e7\u00f5es",
+      "community_name": "erros-e-licoes.md",
       "norm_label": "erros-e-licoes.md"
     },
     {
@@ -1045,19 +1056,8 @@
       "_origin": "ast",
       "id": "central_de_aprendizagem_erros_e_licoes_central_de_aprendizagem_erros_e_li\u00e7\u00f5es",
       "community": 14,
-      "community_name": "Central de Aprendizagem \u2014 Erros e Li\u00e7\u00f5es",
+      "community_name": "erros-e-licoes.md",
       "norm_label": "central de aprendizagem \u2014 erros e licoes"
-    },
-    {
-      "label": "\ud83d\udcc5 31/07/2026 \u2014 Falha no Deploy Remoto (Next.js / Vercel)",
-      "file_type": "document",
-      "source_file": "central-de-aprendizagem/erros-e-licoes.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "central_de_aprendizagem_erros_e_licoes_31_07_2026_falha_no_deploy_remoto_next_js_vercel",
-      "community": 14,
-      "community_name": "Central de Aprendizagem \u2014 Erros e Li\u00e7\u00f5es",
-      "norm_label": "\ud83d\udcc5 31/07/2026 \u2014 falha no deploy remoto (next.js / vercel)"
     },
     {
       "label": "projeto.md",
@@ -1146,6 +1146,39 @@
       "community": 5,
       "community_name": "projeto.md",
       "norm_label": "observacoes importantes"
+    },
+    {
+      "label": "explicacoes.md",
+      "file_type": "document",
+      "source_file": "historico/explicacoes.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "historico_explicacoes",
+      "community": 13,
+      "community_name": "Hist\u00f3rico de Explica\u00e7\u00f5es para N\u00e3o-T\u00e9cnicos",
+      "norm_label": "explicacoes.md"
+    },
+    {
+      "label": "Hist\u00f3rico de Explica\u00e7\u00f5es para N\u00e3o-T\u00e9cnicos",
+      "file_type": "document",
+      "source_file": "historico/explicacoes.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "historico_explicacoes_hist\u00f3rico_de_explica\u00e7\u00f5es_para_n\u00e3o_t\u00e9cnicos",
+      "community": 13,
+      "community_name": "Hist\u00f3rico de Explica\u00e7\u00f5es para N\u00e3o-T\u00e9cnicos",
+      "norm_label": "historico de explicacoes para nao-tecnicos"
+    },
+    {
+      "label": "31/07/2026 \u2014 Inicializa\u00e7\u00e3o da Governan\u00e7a e Auditoria do Projeto",
+      "file_type": "document",
+      "source_file": "historico/explicacoes.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "historico_explicacoes_31_07_2026_inicializa\u00e7\u00e3o_da_governan\u00e7a_e_auditoria_do_projeto",
+      "community": 13,
+      "community_name": "Hist\u00f3rico de Explica\u00e7\u00f5es para N\u00e3o-T\u00e9cnicos",
+      "norm_label": "31/07/2026 \u2014 inicializacao da governanca e auditoria do projeto"
     }
   ],
   "links": [
@@ -2096,12 +2129,34 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "AGENTS.md",
-      "source_location": "L2",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "agents",
-      "target": "agents_this_is_not_the_next_js_you_know",
+      "source": "gemini",
+      "target": "gemini_gemini_md_regras_do_workspace",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "gemini",
+      "target": "gemini_this_is_not_the_next_js_you_know",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "gemini_this_is_not_the_next_js_you_know",
+      "target": "gemini_code_review_graph",
       "confidence_score": 1.0
     },
     {
@@ -2157,17 +2212,6 @@
       "_origin": "ast",
       "source": "central_de_aprendizagem_erros_e_licoes",
       "target": "central_de_aprendizagem_erros_e_licoes_central_de_aprendizagem_erros_e_li\u00e7\u00f5es",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "central-de-aprendizagem/erros-e-licoes.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "central_de_aprendizagem_erros_e_licoes_central_de_aprendizagem_erros_e_li\u00e7\u00f5es",
-      "target": "central_de_aprendizagem_erros_e_licoes_31_07_2026_falha_no_deploy_remoto_next_js_vercel",
       "confidence_score": 1.0
     },
     {
@@ -2246,8 +2290,29 @@
       "source": "contexto_projeto",
       "target": "contexto_projeto_stack_e_tecnologias",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "historico/explicacoes.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "historico_explicacoes",
+      "target": "historico_explicacoes_hist\u00f3rico_de_explica\u00e7\u00f5es_para_n\u00e3o_t\u00e9cnicos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "historico/explicacoes.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "historico_explicacoes_hist\u00f3rico_de_explica\u00e7\u00f5es_para_n\u00e3o_t\u00e9cnicos",
+      "target": "historico_explicacoes_31_07_2026_inicializa\u00e7\u00e3o_da_governan\u00e7a_e_auditoria_do_projeto",
+      "confidence_score": 1.0
     }
   ],
-  "hyperedges": [],
-  "built_at_commit": "c3785cfa7fe103c3155e05f70b6f134f3d04696a"
+  "hyperedges": []
 }

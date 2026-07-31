@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import CommunityCard from "@/components/ComunityCard";
+import CommunityCard from "@/components/CommunityCard";
 import ContactCard from "@/components/ContactCard";
 import TorneioCards from "@/components/TorneioCards";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
