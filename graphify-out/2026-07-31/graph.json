@@ -1071,6 +1071,17 @@
       "norm_label": "\ud83d\udcc5 31/07/2026 \u2014 inspecao de erro via api github comments / statuses do vercel bot"
     },
     {
+      "label": "\ud83d\udcc5 31/07/2026 \u2014 Erro Persistente no Deploy / Teste em Conta Alternativa",
+      "file_type": "document",
+      "source_file": "central-de-aprendizagem/erros-e-licoes.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "central_de_aprendizagem_erros_e_licoes_31_07_2026_erro_persistente_no_deploy_teste_em_conta_alternativa",
+      "community": 14,
+      "community_name": "Central de Aprendizagem \u2014 Erros e Li\u00e7\u00f5es",
+      "norm_label": "\ud83d\udcc5 31/07/2026 \u2014 erro persistente no deploy / teste em conta alternativa"
+    },
+    {
       "label": "projeto.md",
       "file_type": "document",
       "source_file": "contexto/projeto.md",
@@ -2163,6 +2174,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "central-de-aprendizagem/erros-e-licoes.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "central_de_aprendizagem_erros_e_licoes_central_de_aprendizagem_erros_e_li\u00e7\u00f5es",
+      "target": "central_de_aprendizagem_erros_e_licoes_31_07_2026_erro_persistente_no_deploy_teste_em_conta_alternativa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "central-de-aprendizagem/erros-e-licoes.md",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
@@ -2271,5 +2293,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ac8caced34392bea5b4e25a02228ac35d94ecb7c"
+  "built_at_commit": "01b493c802f69101f4a65b73a092e927a74d4a94"
 }

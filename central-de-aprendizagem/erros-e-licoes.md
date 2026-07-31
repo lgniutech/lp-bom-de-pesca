@@ -31,3 +31,19 @@
 **Consequência:** Projeto em espera pela nova URL/PAT de teste.
 **Correção aplicada:** Registrar ocorrência e aguardar novos dados de conta/repositório para isolamento da falha.
 **Lição:** Testar o build em um projeto Vercel zerado e em conta limpa permite isolar problemas de cache ou configurações legadas de ambiente no painel da Vercel.
+
+## 📅 31/07/2026 — Divergência de Build entre Contas Vercel (Configurações do Projeto Vercel)
+
+**Contexto:** Sincronização do commit `36f304f` (100% funcional na Niutech) para a conta Techweniu.
+**Erro:** O mesmo código exato roda com sucesso na Niutech mas falha na Vercel da Techweniu.
+**Consequência:** Incompatibilidade nas configurações internas do projeto na Vercel da Techweniu.
+**Correção aplicada:** Analisar causas específicas de painel Vercel: Root Directory alterado, Node.js Version defasada (18x vs 20x) ou Build Command customizado.
+**Lição:** Quando um código idêntico compila em um projeto Vercel e falha em outro, a falha é 100% decorrente de configurações do painel da Vercel (Root Directory, Node Version ou Override de Build).
+
+## 📅 31/07/2026 — Falha no Deploy de Teste Mínimo na Vercel (Configuração de Painel Vercel)
+
+**Contexto:** Teste com versão mínima de `page.tsx` (sem componentes) enviado em `6416751`.
+**Erro:** O build da Vercel da conta Techweniu falhou até para um código de 5 linhas em branco.
+**Consequência:** Prova conclusiva de que a falha NÃO é no código fonte da Landing Page.
+**Correção aplicada:** Registrar conclusão do isolamento de causa (problema 100% nas configurações de Build/Framework Preset/Root Directory do painel Vercel Techweniu) e restaurar o código completo da Landing Page.
+**Lição:** Se um arquivo JSX simples com apenas <h1> de 5 linhas falha no build remoto da Vercel, a causa é 100% configuração sobrescrita no painel (Root Directory incorreto, Framework Preset alterado ou Build Command customizado).

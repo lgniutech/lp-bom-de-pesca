@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1785498391.6203952,
-    "ast_hash": "2debf3c73819cc4d6569732aef9ad387",
+    "mtime": 1785502765.1871355,
+    "ast_hash": "6ad97894508746b85de0d0ec7837322f",
     "semantic_hash": ""
   },
   "src/components/AnimateOnScroll.tsx": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "src/components/TorneioCards.tsx": {
-    "mtime": 1785497982.3924558,
-    "ast_hash": "cf265f15e4ebc0362ff825075967aaba",
+    "mtime": 1785499365.042306,
+    "ast_hash": "4442a02196b6c7724daef7c95598ac59",
     "semantic_hash": ""
   },
   "README.md": {
@@ -65,8 +65,8 @@
     "semantic_hash": ""
   },
   "central-de-aprendizagem/erros-e-licoes.md": {
-    "mtime": 1785498975.1677554,
-    "ast_hash": "25c3e49a277f2eee3031fbbcd966685c",
+    "mtime": 1785499966.989116,
+    "ast_hash": "32c35ca65509ef67af86061845b037f1",
     "semantic_hash": ""
   },
   "contexto/projeto.md": {
@@ -142,6 +142,11 @@
   "src/components/CommunityCard.tsx": {
     "mtime": 1785498013.5078578,
     "ast_hash": "a538e26d1987515652fd15edf7041526",
+    "semantic_hash": ""
+  },
+  "public/images/brasao-4-torneio.png": {
+    "mtime": 1785499339.227229,
+    "ast_hash": "94d505a408610f5a482af4137a333101",
     "semantic_hash": ""
   }
 }
