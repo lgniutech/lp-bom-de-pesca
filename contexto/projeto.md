@@ -1,6 +1,6 @@
 ## Configuração do workspace
 Tem git: sim
-Repositório git: https://github.com/Techweniu/lp-bom-de-pesca
+Repositório git: https://github.com/lgniutech/lp-bom-de-pesca
 
 ## O que é este projeto
 Landing Page promocional e informativa para Bom de Pesca (loja e 4º Torneio de Pesca em Itumbiara-GO).
