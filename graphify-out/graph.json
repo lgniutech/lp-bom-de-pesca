@@ -153,7 +153,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "package_dependencies",
-      "community": 12,
+      "community": 0,
       "community_name": "dependencies",
       "norm_label": "dependencies"
     },
@@ -164,7 +164,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "package_dependencies_next",
-      "community": 12,
+      "community": 0,
       "community_name": "dependencies",
       "norm_label": "next"
     },
@@ -175,7 +175,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "next",
-      "community": 12,
+      "community": 0,
       "community_name": "dependencies",
       "norm_label": "next"
     },
@@ -186,7 +186,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "package_dependencies_react",
-      "community": 12,
+      "community": 0,
       "community_name": "dependencies",
       "norm_label": "react"
     },
@@ -197,7 +197,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "react",
-      "community": 12,
+      "community": 0,
       "community_name": "dependencies",
       "norm_label": "react"
     },
@@ -208,7 +208,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "package_dependencies_react_dom",
-      "community": 12,
+      "community": 0,
       "community_name": "dependencies",
       "norm_label": "react-dom"
     },
@@ -219,42 +219,75 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "react_dom",
-      "community": 12,
+      "community": 0,
       "community_name": "dependencies",
       "norm_label": "react-dom"
-    },
-    {
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "package_devdependencies",
-      "community": 0,
-      "community_name": "devDependencies",
-      "norm_label": "devdependencies"
     },
     {
       "label": "@tailwindcss/postcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L15",
       "_origin": "ast",
-      "id": "package_devdependencies_tailwindcss_postcss",
+      "id": "package_dependencies_tailwindcss_postcss",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "@tailwindcss/postcss"
     },
     {
       "label": "@tailwindcss/postcss",
       "file_type": "concept",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "tailwindcss_postcss",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "@tailwindcss/postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "package_dependencies_tailwindcss",
+      "community": 0,
+      "community_name": "dependencies",
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "tailwindcss",
+      "community": 0,
+      "community_name": "dependencies",
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "package_dependencies_typescript",
+      "community": 0,
+      "community_name": "dependencies",
+      "norm_label": "typescript"
+    },
+    {
+      "label": "typescript",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "typescript",
+      "community": 0,
+      "community_name": "dependencies",
+      "norm_label": "typescript"
     },
     {
       "label": "@types/node",
@@ -262,9 +295,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "package_devdependencies_types_node",
+      "id": "package_dependencies_types_node",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "@types/node"
     },
     {
@@ -275,7 +308,7 @@
       "_origin": "ast",
       "id": "types_node",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "@types/node"
     },
     {
@@ -284,9 +317,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "package_devdependencies_types_react",
+      "id": "package_dependencies_types_react",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "@types/react"
     },
     {
@@ -297,7 +330,7 @@
       "_origin": "ast",
       "id": "types_react",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "@types/react"
     },
     {
@@ -306,9 +339,9 @@
       "source_file": "package.json",
       "source_location": "L20",
       "_origin": "ast",
-      "id": "package_devdependencies_types_react_dom",
+      "id": "package_dependencies_types_react_dom",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "@types/react-dom"
     },
     {
@@ -319,7 +352,7 @@
       "_origin": "ast",
       "id": "types_react_dom",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "@types/react-dom"
     },
     {
@@ -328,9 +361,9 @@
       "source_file": "package.json",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "package_devdependencies_eslint",
+      "id": "package_dependencies_eslint",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "eslint"
     },
     {
@@ -341,7 +374,7 @@
       "_origin": "ast",
       "id": "eslint",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "eslint"
     },
     {
@@ -350,9 +383,9 @@
       "source_file": "package.json",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "package_devdependencies_eslint_config_next",
+      "id": "package_dependencies_eslint_config_next",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "eslint-config-next"
     },
     {
@@ -363,52 +396,8 @@
       "_origin": "ast",
       "id": "eslint_config_next",
       "community": 0,
-      "community_name": "devDependencies",
+      "community_name": "dependencies",
       "norm_label": "eslint-config-next"
-    },
-    {
-      "label": "tailwindcss",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "package_devdependencies_tailwindcss",
-      "community": 0,
-      "community_name": "devDependencies",
-      "norm_label": "tailwindcss"
-    },
-    {
-      "label": "tailwindcss",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "tailwindcss",
-      "community": 0,
-      "community_name": "devDependencies",
-      "norm_label": "tailwindcss"
-    },
-    {
-      "label": "typescript",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "package_devdependencies_typescript",
-      "community": 0,
-      "community_name": "devDependencies",
-      "norm_label": "typescript"
-    },
-    {
-      "label": "typescript",
-      "file_type": "concept",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "typescript",
-      "community": 0,
-      "community_name": "devDependencies",
-      "norm_label": "typescript"
     },
     {
       "label": "postcss.config.mjs",
@@ -1071,6 +1060,28 @@
       "norm_label": "\ud83d\udcc5 31/07/2026 \u2014 falha persistente no deploy remoto (nomenclatura / case sensitivity / vercel logs)"
     },
     {
+      "label": "\ud83d\udcc5 31/07/2026 \u2014 Inspe\u00e7\u00e3o de Erro via API GitHub Comments / Statuses do Vercel Bot",
+      "file_type": "document",
+      "source_file": "central-de-aprendizagem/erros-e-licoes.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "central_de_aprendizagem_erros_e_licoes_31_07_2026_inspe\u00e7\u00e3o_de_erro_via_api_github_comments_statuses_do_vercel_bot",
+      "community": 14,
+      "community_name": "Central de Aprendizagem \u2014 Erros e Li\u00e7\u00f5es",
+      "norm_label": "\ud83d\udcc5 31/07/2026 \u2014 inspecao de erro via api github comments / statuses do vercel bot"
+    },
+    {
+      "label": "\ud83d\udcc5 31/07/2026 \u2014 Erro Persistente no Deploy / Teste em Conta Alternativa",
+      "file_type": "document",
+      "source_file": "central-de-aprendizagem/erros-e-licoes.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "central_de_aprendizagem_erros_e_licoes_31_07_2026_erro_persistente_no_deploy_teste_em_conta_alternativa",
+      "community": 14,
+      "community_name": "Central de Aprendizagem \u2014 Erros e Li\u00e7\u00f5es",
+      "norm_label": "\ud83d\udcc5 31/07/2026 \u2014 erro persistente no deploy / teste em conta alternativa"
+    },
+    {
       "label": "projeto.md",
       "file_type": "document",
       "source_file": "contexto/projeto.md",
@@ -1197,17 +1208,6 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "package",
-      "target": "package_devdependencies",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
       "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
@@ -1296,6 +1296,28 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_eslint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_eslint_config_next",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
@@ -1323,6 +1345,72 @@
       "_origin": "ast",
       "source": "package_dependencies",
       "target": "package_dependencies_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_tailwindcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_tailwindcss_postcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_types_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_types_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_types_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "package_dependencies",
+      "target": "package_dependencies_typescript",
       "confidence_score": 1.0
     },
     {
@@ -1362,102 +1450,14 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_config_next",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_tailwindcss",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_tailwindcss_postcss",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_node",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react_dom",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L15",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_tailwindcss_postcss",
+      "source": "package_dependencies_tailwindcss_postcss",
       "target": "tailwindcss_postcss",
       "confidence_score": 1.0
     },
@@ -1465,11 +1465,35 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
+      "source": "package_dependencies_tailwindcss",
+      "target": "tailwindcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
+      "source": "package_dependencies_typescript",
+      "target": "typescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
       "source_location": "L18",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_types_node",
+      "source": "package_dependencies_types_node",
       "target": "types_node",
       "confidence_score": 1.0
     },
@@ -1481,7 +1505,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_types_react",
+      "source": "package_dependencies_types_react",
       "target": "types_react",
       "confidence_score": 1.0
     },
@@ -1493,7 +1517,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_types_react_dom",
+      "source": "package_dependencies_types_react_dom",
       "target": "types_react_dom",
       "confidence_score": 1.0
     },
@@ -1505,7 +1529,7 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_eslint",
+      "source": "package_dependencies_eslint",
       "target": "eslint",
       "confidence_score": 1.0
     },
@@ -1517,32 +1541,8 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
-      "source": "package_devdependencies_eslint_config_next",
+      "source": "package_dependencies_eslint_config_next",
       "target": "eslint_config_next",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast",
-      "source": "package_devdependencies_tailwindcss",
-      "target": "tailwindcss",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast",
-      "source": "package_devdependencies_typescript",
-      "target": "typescript",
       "confidence_score": 1.0
     },
     {
@@ -2174,6 +2174,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "central-de-aprendizagem/erros-e-licoes.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "central_de_aprendizagem_erros_e_licoes_central_de_aprendizagem_erros_e_li\u00e7\u00f5es",
+      "target": "central_de_aprendizagem_erros_e_licoes_31_07_2026_erro_persistente_no_deploy_teste_em_conta_alternativa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "central-de-aprendizagem/erros-e-licoes.md",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
@@ -2190,6 +2201,17 @@
       "_origin": "ast",
       "source": "central_de_aprendizagem_erros_e_licoes_central_de_aprendizagem_erros_e_li\u00e7\u00f5es",
       "target": "central_de_aprendizagem_erros_e_licoes_31_07_2026_falha_persistente_no_deploy_remoto_nomenclatura_case_sensitivity_vercel_logs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "central-de-aprendizagem/erros-e-licoes.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "central_de_aprendizagem_erros_e_licoes_central_de_aprendizagem_erros_e_li\u00e7\u00f5es",
+      "target": "central_de_aprendizagem_erros_e_licoes_31_07_2026_inspe\u00e7\u00e3o_de_erro_via_api_github_comments_statuses_do_vercel_bot",
       "confidence_score": 1.0
     },
     {
@@ -2271,5 +2293,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "cd9a1cb9c072e95fd9e83745f84cc3870354d4c4"
+  "built_at_commit": "01b493c802f69101f4a65b73a092e927a74d4a94"
 }

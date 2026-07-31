@@ -10,9 +10,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1785496762.1434164,
-    "ast_hash": "596dd994b812111a09f0a9613214e3f4",
-    "semantic_hash": "596dd994b812111a09f0a9613214e3f4"
+    "mtime": 1785498604.61279,
+    "ast_hash": "0cbdf1000ee56ea91861bccde384ae49",
+    "semantic_hash": ""
   },
   "postcss.config.mjs": {
     "mtime": 1785496762.158186,
@@ -20,9 +20,9 @@
     "semantic_hash": "239f3ebf717465dc636818a1a619398d"
   },
   "src/app/layout.tsx": {
-    "mtime": 1785496762.3528788,
-    "ast_hash": "399a489a861548fdd29ed5809db47aa6",
-    "semantic_hash": "399a489a861548fdd29ed5809db47aa6"
+    "mtime": 1785498995.660779,
+    "ast_hash": "ab588529867422ea0da03643960c3d54",
+    "semantic_hash": ""
   },
   "src/app/page.tsx": {
     "mtime": 1785498391.6203952,
@@ -35,9 +35,9 @@
     "semantic_hash": "4e31b78789bff0fa34c530e6a4986795"
   },
   "src/components/ContactCard.tsx": {
-    "mtime": 1785496762.412895,
-    "ast_hash": "ad5b1fe63caa0d7b833ff1a18010e32a",
-    "semantic_hash": "ad5b1fe63caa0d7b833ff1a18010e32a"
+    "mtime": 1785498594.0379212,
+    "ast_hash": "9ac907e434ca2e3974762d976290ab01",
+    "semantic_hash": ""
   },
   "src/components/Header.tsx": {
     "mtime": 1785496762.4233391,
@@ -65,13 +65,13 @@
     "semantic_hash": ""
   },
   "central-de-aprendizagem/erros-e-licoes.md": {
-    "mtime": 1785498268.3015869,
-    "ast_hash": "70b10581dc0c05f30b6c79383ff97607",
+    "mtime": 1785498975.1677554,
+    "ast_hash": "25c3e49a277f2eee3031fbbcd966685c",
     "semantic_hash": ""
   },
   "contexto/projeto.md": {
-    "mtime": 1785497741.0152147,
-    "ast_hash": "19827d33cadfe7ef7d2e07efa28161f8",
+    "mtime": 1785499037.67798,
+    "ast_hash": "30ca53834a681a5a94cba5ce17981b59",
     "semantic_hash": ""
   },
   "public/file.svg": {
