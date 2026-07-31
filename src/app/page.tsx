@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import CommunityCard from "@/components/ComunityCard";
 import ContactCard from "@/components/ContactCard";
+import TorneioCards from "@/components/TorneioCards";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export default function Home() {
@@ -24,7 +25,9 @@ export default function Home() {
       <main className="flex flex-col items-center min-h-screen px-4 pb-20 overflow-x-hidden">
         <div className="w-full max-w-6xl mx-auto flex flex-col gap-10 relative z-10">
           <Header />
-          
+
+          <TorneioCards />
+
           <AnimateOnScroll direction="left">
             <CommunityCard />
           </AnimateOnScroll>
