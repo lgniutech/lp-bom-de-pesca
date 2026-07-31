@@ -5,9 +5,9 @@
     "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
   },
   "next.config.ts": {
-    "mtime": 1785496762.116034,
-    "ast_hash": "9b77af189a21a7a64e4bd7a426f64176",
-    "semantic_hash": "9b77af189a21a7a64e4bd7a426f64176"
+    "mtime": 1785498403.1212893,
+    "ast_hash": "4a4caea2dada5ad2e73156147e238ac2",
+    "semantic_hash": ""
   },
   "package.json": {
     "mtime": 1785496762.1434164,
@@ -25,19 +25,14 @@
     "semantic_hash": "399a489a861548fdd29ed5809db47aa6"
   },
   "src/app/page.tsx": {
-    "mtime": 1785497992.1187577,
-    "ast_hash": "4b52490c3439644fe592bcb60cfa6216",
+    "mtime": 1785498391.6203952,
+    "ast_hash": "2debf3c73819cc4d6569732aef9ad387",
     "semantic_hash": ""
   },
   "src/components/AnimateOnScroll.tsx": {
     "mtime": 1785496762.3895507,
     "ast_hash": "4e31b78789bff0fa34c530e6a4986795",
     "semantic_hash": "4e31b78789bff0fa34c530e6a4986795"
-  },
-  "src/components/ComunityCard.tsx": {
-    "mtime": 1785498013.5078578,
-    "ast_hash": "a538e26d1987515652fd15edf7041526",
-    "semantic_hash": ""
   },
   "src/components/ContactCard.tsx": {
     "mtime": 1785496762.412895,
@@ -70,8 +65,8 @@
     "semantic_hash": ""
   },
   "central-de-aprendizagem/erros-e-licoes.md": {
-    "mtime": 1785497919.192631,
-    "ast_hash": "05f43970ab7211117a297464f33b1903",
+    "mtime": 1785498268.3015869,
+    "ast_hash": "70b10581dc0c05f30b6c79383ff97607",
     "semantic_hash": ""
   },
   "contexto/projeto.md": {
@@ -142,6 +137,11 @@
   "CLAUDE.md": {
     "mtime": 1785497740.9674444,
     "ast_hash": "771faa62feb60b7de901a397aebb29b0",
+    "semantic_hash": ""
+  },
+  "src/components/CommunityCard.tsx": {
+    "mtime": 1785498013.5078578,
+    "ast_hash": "a538e26d1987515652fd15edf7041526",
     "semantic_hash": ""
   }
 }

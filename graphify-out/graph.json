@@ -532,23 +532,23 @@
       "norm_label": "animateonscroll()"
     },
     {
-      "label": "ComunityCard.tsx",
+      "label": "CommunityCard.tsx",
       "file_type": "code",
-      "source_file": "src/components/ComunityCard.tsx",
+      "source_file": "src/components/CommunityCard.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_components_comunitycard",
+      "id": "src_components_communitycard",
       "community": 2,
       "community_name": "page.tsx",
-      "norm_label": "comunitycard.tsx"
+      "norm_label": "communitycard.tsx"
     },
     {
       "label": "CommunityCard()",
       "file_type": "code",
-      "source_file": "src/components/ComunityCard.tsx",
+      "source_file": "src/components/CommunityCard.tsx",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "src_components_comunitycard_communitycard",
+      "id": "src_components_communitycard_communitycard",
       "community": 2,
       "community_name": "page.tsx",
       "norm_label": "communitycard()"
@@ -1058,6 +1058,17 @@
       "community": 14,
       "community_name": "Central de Aprendizagem \u2014 Erros e Li\u00e7\u00f5es",
       "norm_label": "\ud83d\udcc5 31/07/2026 \u2014 falha no deploy remoto (next.js / vercel)"
+    },
+    {
+      "label": "\ud83d\udcc5 31/07/2026 \u2014 Falha Persistente no Deploy Remoto (Nomenclatura / Case Sensitivity / Vercel Logs)",
+      "file_type": "document",
+      "source_file": "central-de-aprendizagem/erros-e-licoes.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "central_de_aprendizagem_erros_e_licoes_31_07_2026_falha_persistente_no_deploy_remoto_nomenclatura_case_sensitivity_vercel_logs",
+      "community": 14,
+      "community_name": "Central de Aprendizagem \u2014 Erros e Li\u00e7\u00f5es",
+      "norm_label": "\ud83d\udcc5 31/07/2026 \u2014 falha persistente no deploy remoto (nomenclatura / case sensitivity / vercel logs)"
     },
     {
       "label": "projeto.md",
@@ -1610,7 +1621,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_page",
-      "target": "src_components_comunitycard",
+      "target": "src_components_communitycard",
       "confidence_score": 1.0
     },
     {
@@ -1622,7 +1633,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_page",
-      "target": "src_components_comunitycard_communitycard",
+      "target": "src_components_communitycard_communitycard",
       "confidence_score": 1.0
     },
     {
@@ -1734,12 +1745,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ComunityCard.tsx",
+      "source_file": "src/components/CommunityCard.tsx",
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_components_comunitycard",
-      "target": "src_components_comunitycard_communitycard",
+      "source": "src_components_communitycard",
+      "target": "src_components_communitycard_communitycard",
       "confidence_score": 1.0
     },
     {
@@ -2173,6 +2184,17 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "central-de-aprendizagem/erros-e-licoes.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "central_de_aprendizagem_erros_e_licoes_central_de_aprendizagem_erros_e_li\u00e7\u00f5es",
+      "target": "central_de_aprendizagem_erros_e_licoes_31_07_2026_falha_persistente_no_deploy_remoto_nomenclatura_case_sensitivity_vercel_logs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "contexto/projeto.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -2249,5 +2271,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c3785cfa7fe103c3155e05f70b6f134f3d04696a"
+  "built_at_commit": "cd9a1cb9c072e95fd9e83745f84cc3870354d4c4"
 }

@@ -25,7 +25,7 @@
     "semantic_hash": "399a489a861548fdd29ed5809db47aa6"
   },
   "src/app/page.tsx": {
-    "mtime": 1785497115.2716076,
+    "mtime": 1785497992.1187577,
     "ast_hash": "4b52490c3439644fe592bcb60cfa6216",
     "semantic_hash": ""
   },
@@ -35,7 +35,7 @@
     "semantic_hash": "4e31b78789bff0fa34c530e6a4986795"
   },
   "src/components/ComunityCard.tsx": {
-    "mtime": 1785497093.7429457,
+    "mtime": 1785498013.5078578,
     "ast_hash": "a538e26d1987515652fd15edf7041526",
     "semantic_hash": ""
   },
@@ -60,13 +60,8 @@
     "semantic_hash": ""
   },
   "src/components/TorneioCards.tsx": {
-    "mtime": 1785497105.4815073,
+    "mtime": 1785497982.3924558,
     "ast_hash": "cf265f15e4ebc0362ff825075967aaba",
-    "semantic_hash": ""
-  },
-  "GEMINI.md": {
-    "mtime": 1785496871.6296015,
-    "ast_hash": "acb0b4bc02b271adc7512a375abb59bf",
     "semantic_hash": ""
   },
   "README.md": {
@@ -75,18 +70,13 @@
     "semantic_hash": ""
   },
   "central-de-aprendizagem/erros-e-licoes.md": {
-    "mtime": 1785496881.6349692,
-    "ast_hash": "f6664323b3257714aa83a5ae6b695edd",
+    "mtime": 1785497919.192631,
+    "ast_hash": "05f43970ab7211117a297464f33b1903",
     "semantic_hash": ""
   },
   "contexto/projeto.md": {
-    "mtime": 1785496879.095576,
-    "ast_hash": "5ebfdb94c0c9c3fc70e6d0ae28e91538",
-    "semantic_hash": ""
-  },
-  "historico/explicacoes.md": {
-    "mtime": 1785496883.2699993,
-    "ast_hash": "dde2c6b8ec0e221e222f69f524715c1e",
+    "mtime": 1785497741.0152147,
+    "ast_hash": "19827d33cadfe7ef7d2e07efa28161f8",
     "semantic_hash": ""
   },
   "public/file.svg": {
@@ -142,6 +132,16 @@
   "src/app/icon.png": {
     "mtime": 1785496762.3443305,
     "ast_hash": "a41b1e345b135f53d6d1f3b1190f5c05",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1785497740.9663627,
+    "ast_hash": "9346a4897ff955555ddedb7bebf77adb",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1785497740.9674444,
+    "ast_hash": "771faa62feb60b7de901a397aebb29b0",
     "semantic_hash": ""
   }
 }
