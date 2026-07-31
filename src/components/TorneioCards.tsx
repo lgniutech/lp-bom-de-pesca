@@ -8,7 +8,7 @@ export default function TorneioCards() {
       {/* 1. Regulamento do 4º Torneio */}
       <AnimateOnScroll direction="left">
         <Link
-          href="https://drive.google.com/file/d/1I6TJUkkEePNO1nRABe7XCe0pLtSLHvNl/view?usp=sharing"
+          href="https://drive.google.com/file/d/1w4ZlcUhT6yrDm0QsTHVdseq9hyFVhffY/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative w-full max-w-5xl mx-auto bg-[#1a1b2e] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 transition-all hover:scale-[1.01] hover:border-[#f26419]/50 block"
