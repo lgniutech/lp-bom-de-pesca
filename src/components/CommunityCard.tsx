@@ -1,8 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CommunityCard() {
   return (
-    <section className="relative w-full max-w-5xl mx-auto bg-[#1a1b2e] rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row items-center border border-white/5">
+    <Link
+      href="https://chat.whatsapp.com/HeihcsLgObR9WTyITnjjQx?s=sh&p=a&ilr=1"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative w-full max-w-5xl mx-auto bg-[#1a1b2e] rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row items-center border border-white/5 transition-all hover:scale-[1.01] hover:border-[#25D366]/50 block"
+      aria-label="Participar da Comunidade Bom de Pesca no WhatsApp"
+    >
       <div className="relative z-10 flex flex-col md:flex-row w-full py-8 md:py-12 px-6 md:px-12 gap-8 items-center justify-between">
         
         {/* Lado do Texto */}
@@ -14,12 +21,12 @@ export default function CommunityCard() {
             <span className="text-[#25D366] font-bold tracking-wider uppercase text-sm drop-shadow-md">Comunidade VIP</span>
           </div>
           <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-4 text-white">
-            Participe da nossa <span className="text-[#f26419]">Comunidade no WhatsApp</span> e tenha acesso a novidades e promoções
+            Participe da nossa <span className="text-[#f26419] underline decoration-[#f26419]/50">Comunidade no WhatsApp</span> e tenha acesso a novidades e promoções
           </h2>
         </div>
 
         {/* Sub-Card: Interface Perfil WhatsApp */}
-        <figure className="relative w-full max-w-[320px] flex-shrink-0 bg-[#0b141a] rounded-[2rem] p-5 shadow-2xl border border-white/5 flex flex-col items-center z-20">
+        <figure className="relative w-full max-w-[320px] flex-shrink-0 bg-[#0b141a] rounded-[2rem] p-5 shadow-2xl border border-white/5 flex flex-col items-center z-20 transition-transform group-hover:scale-105">
           
           <div className="relative w-full aspect-square max-w-[200px] rounded-[2rem] overflow-hidden mb-4 shadow-lg bg-black">
             <Image
@@ -47,6 +54,6 @@ export default function CommunityCard() {
         </figure>
 
       </div>
-    </section>
+    </Link>
   );
 }
