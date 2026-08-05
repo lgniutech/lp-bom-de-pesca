@@ -51,7 +51,7 @@
   }
 }
 
-/* Animações dos Peixes e Bolhas Subaquáticas */
+/* Animações dos Peixes e Bolhas Subaquáticas (Inicialização Imediata com Delays Negativos) */
 @keyframes swimLeft {
   0% {
     transform: translate3d(100vw, 0, 0) translateY(0px) rotate(0deg);
@@ -60,13 +60,13 @@
     transform: translate3d(40vw, 0, 0) translateY(-25px) rotate(-3deg);
   }
   100% {
-    transform: translate3d(-300px, 0, 0) translateY(10px) rotate(2deg);
+    transform: translate3d(-350px, 0, 0) translateY(10px) rotate(2deg);
   }
 }
 
 @keyframes swimRight {
   0% {
-    transform: translate3d(-300px, 0, 0) translateY(0px) rotate(0deg);
+    transform: translate3d(-350px, 0, 0) translateY(0px) rotate(0deg);
   }
   50% {
     transform: translate3d(50vw, 0, 0) translateY(30px) rotate(4deg);
@@ -108,25 +108,25 @@
 }
 
 .animate-swim-left {
-  animation: swimLeft 18s linear infinite;
+  animation: swimLeft 18s linear infinite -2s;
 }
 
 .animate-swim-right {
-  animation: swimRight 22s linear infinite 4s;
+  animation: swimRight 22s linear infinite -8s;
 }
 
 .animate-swim-left-slow {
-  animation: swimLeft 28s linear infinite 8s;
+  animation: swimLeft 28s linear infinite -14s;
 }
 
 .animate-bubble-1 {
-  animation: bubbleUp 12s ease-in infinite;
+  animation: bubbleUp 12s ease-in infinite -1s;
 }
 
 .animate-bubble-2 {
-  animation: bubbleUp 16s ease-in infinite 3s;
+  animation: bubbleUp 16s ease-in infinite -5s;
 }
 
 .animate-bubble-3 {
-  animation: bubbleUp 14s ease-in infinite 6s;
+  animation: bubbleUp 14s ease-in infinite -9s;
 }
