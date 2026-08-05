@@ -11,12 +11,29 @@ interface TimeLeft {
   isExpired: boolean;
 }
 
-const TARGET_DATE = "2025-09-11T18:30:00-03:00";
 const REGISTRATION_URL =
   "https://drive.google.com/file/d/1gd-JxgU0-hwIeDjnHAlJTXbOTsecAu-Y/view?usp=sharing";
 
-function calculateTimeLeft(targetIso: string): TimeLeft {
-  const targetTime = new Date(targetIso).getTime();
+/**
+  Retorna o timestamp da data alvo do torneio no fuso horário de Itumbiara-GO (UTC-3 / Horário de Brasília).
+  Encerramento: 11 de Setembro às 18h30.
+*/
+function getItumbiaraTargetTimestamp(): number {
+  const now = new Date();
+  let year = now.getFullYear();
+
+  let target = new Date(`${year}-09-11T18:30:00-03:00`).getTime();
+
+  if (target < now.getTime()) {
+    year += 1;
+    target = new Date(`${year}-09-11T18:30:00-03:00`).getTime();
+  }
+
+  return target;
+}
+
+function calculateTimeLeft(): TimeLeft {
+  const targetTime = getItumbiaraTargetTimestamp();
   const now = new Date().getTime();
   const difference = targetTime - now;
 
@@ -45,10 +62,10 @@ export default function StickyTopBanner() {
 
   useEffect(() => {
     setMounted(true);
-    setTimeLeft(calculateTimeLeft(TARGET_DATE));
+    setTimeLeft(calculateTimeLeft());
 
     const interval = setInterval(() => {
-      setTimeLeft(calculateTimeLeft(TARGET_DATE));
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(interval);
@@ -59,36 +76,35 @@ export default function StickyTopBanner() {
   const formatNumber = (num: number) => String(num).padStart(2, "0");
 
   return (
-    <div className="sticky top-0 z-50 w-full bg-[#0d0d1a]/95 backdrop-blur-xl border-b border-[#f26419]/40 shadow-[0_10px_30px_rgba(0,0,0,0.85)]">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 flex flex-wrap lg:flex-nowrap items-center justify-between gap-3 text-white">
+    <div className="sticky top-0 z-50 w-full bg-[#0d0d1a]/95 backdrop-blur-xl border-b border-[#f26419]/40 shadow-[0_8px_25px_rgba(0,0,0,0.85)]">
+      <div className="max-w-7xl mx-auto px-2.5 sm:px-6 py-2 flex items-center justify-between gap-2 text-white">
         
-        {/* Esquerda: Badge Pulsante + Texto de Alerta */}
-        <div className="flex items-center gap-2.5 min-w-0">
-          <span className="relative flex h-3 w-3 flex-shrink-0">
+        {/* Esquerda: Alerta Pulsante */}
+        <div className="flex items-center gap-2 min-w-0">
+          <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#f26419] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#f26419]"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#f26419]"></span>
           </span>
           
-          <p className="text-xs sm:text-sm font-semibold truncate tracking-tight">
+          <p className="text-[11px] sm:text-sm font-semibold truncate tracking-tight">
             <span className="text-[#f26419] uppercase font-bold">4º Torneio Bom de Pesca:</span>{" "}
             <span className="hidden md:inline text-gray-200">
               Inscrições e a chance de concorrer a mais de R$ 70.000 em prêmios se encerram em:
             </span>
-            <span className="md:hidden text-gray-200">Encerra em:</span>
           </p>
         </div>
 
-        {/* Centro/Direita: Dígitos Numéricos e CTA */}
-        <div className="flex items-center justify-between w-full lg:w-auto gap-3 sm:gap-4 flex-shrink-0">
+        {/* Direita: Cronômetro Mini + Botão Direto sem Quebra no Mobile */}
+        <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
           {/* Cronômetro Compacto */}
-          <div className="flex items-center gap-1 sm:gap-1.5 font-mono tabular-nums text-xs sm:text-sm font-bold bg-[#17172c] px-3 py-1.5 rounded-full border border-white/10 shadow-inner">
-            <span className="text-white">{formatNumber(timeLeft.days)}<span className="text-[10px] text-gray-400 font-normal">d</span></span>
+          <div className="flex items-center gap-1 font-mono tabular-nums text-[11px] sm:text-sm font-bold bg-[#17172c] px-2 sm:px-3 py-1 rounded-full border border-white/10 shadow-inner">
+            <span className="text-white">{formatNumber(timeLeft.days)}<span className="text-[9px] sm:text-[10px] text-gray-400 font-normal">d</span></span>
             <span className="text-gray-500">:</span>
-            <span className="text-[#f26419]">{formatNumber(timeLeft.hours)}<span className="text-[10px] text-[#f26419]/70 font-normal">h</span></span>
+            <span className="text-[#f26419]">{formatNumber(timeLeft.hours)}<span className="text-[9px] sm:text-[10px] text-[#f26419]/70 font-normal">h</span></span>
             <span className="text-gray-500">:</span>
-            <span className="text-white">{formatNumber(timeLeft.minutes)}<span className="text-[10px] text-gray-400 font-normal">m</span></span>
+            <span className="text-white">{formatNumber(timeLeft.minutes)}<span className="text-[9px] sm:text-[10px] text-gray-400 font-normal">m</span></span>
             <span className="text-gray-500">:</span>
-            <span className="text-[#f26419] animate-pulse">{formatNumber(timeLeft.seconds)}<span className="text-[10px] text-[#f26419]/70 font-normal">s</span></span>
+            <span className="text-[#f26419] animate-pulse">{formatNumber(timeLeft.seconds)}<span className="text-[9px] sm:text-[10px] text-[#f26419]/70 font-normal">s</span></span>
           </div>
 
           {/* CTA Botão Direto */}
@@ -96,9 +112,9 @@ export default function StickyTopBanner() {
             href={REGISTRATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#f26419] to-[#ff7d3b] hover:from-[#ff7d3b] hover:to-[#f26419] text-white font-extrabold text-xs sm:text-sm shadow-[0_0_15px_rgba(242,100,25,0.5)] hover:scale-105 active:scale-95 transition-all duration-300"
+            className="inline-flex items-center gap-1.5 px-3 sm:px-5 py-1.5 rounded-full bg-gradient-to-r from-[#f26419] to-[#ff7d3b] hover:from-[#ff7d3b] hover:to-[#f26419] text-white font-extrabold text-[11px] sm:text-sm shadow-[0_0_12px_rgba(242,100,25,0.5)] hover:scale-105 active:scale-95 transition-all duration-300 flex-shrink-0 whitespace-nowrap"
           >
-            <span>Inscreva-se Já</span>
+            <span>Inscreva-se</span>
             <span className="hidden sm:inline-block">🏆</span>
           </Link>
         </div>
