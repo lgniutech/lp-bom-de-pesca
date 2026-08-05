@@ -51,6 +51,45 @@
   }
 }
 
+/* Animações dos Peixes e Bolhas Subaquáticas */
+@keyframes swimLeft {
+  0% {
+    transform: translate3d(100vw, 0, 0) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(40vw, 0, 0) translateY(-25px) rotate(-3deg);
+  }
+  100% {
+    transform: translate3d(-300px, 0, 0) translateY(10px) rotate(2deg);
+  }
+}
+
+@keyframes swimRight {
+  0% {
+    transform: translate3d(-300px, 0, 0) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(50vw, 0, 0) translateY(30px) rotate(4deg);
+  }
+  100% {
+    transform: translate3d(100vw, 0, 0) translateY(-15px) rotate(-2deg);
+  }
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
 .animate-sonar {
   animation: sonar-wave 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
@@ -66,4 +105,28 @@
 
 .animate-gold-shine {
   animation: gold-shine 3s ease-in-out infinite;
+}
+
+.animate-swim-left {
+  animation: swimLeft 18s linear infinite;
+}
+
+.animate-swim-right {
+  animation: swimRight 22s linear infinite 4s;
+}
+
+.animate-swim-left-slow {
+  animation: swimLeft 28s linear infinite 8s;
+}
+
+.animate-bubble-1 {
+  animation: bubbleUp 12s ease-in infinite;
+}
+
+.animate-bubble-2 {
+  animation: bubbleUp 16s ease-in infinite 3s;
+}
+
+.animate-bubble-3 {
+  animation: bubbleUp 14s ease-in infinite 6s;
 }
