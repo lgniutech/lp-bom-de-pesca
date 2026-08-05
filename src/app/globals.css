@@ -51,13 +51,13 @@
   }
 }
 
-/* Animações dos Peixes e Bolhas Subaquáticas (Inicialização Imediata com Delays Negativos) */
+/* Animações dos Peixes e Bolhas Subaquáticas */
 @keyframes swimLeft {
   0% {
     transform: translate3d(100vw, 0, 0) translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translate3d(40vw, 0, 0) translateY(-25px) rotate(-3deg);
+    transform: translate3d(40vw, 0, 0) translateY(-20px) rotate(-3deg);
   }
   100% {
     transform: translate3d(-350px, 0, 0) translateY(10px) rotate(2deg);
@@ -69,7 +69,7 @@
     transform: translate3d(-350px, 0, 0) translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translate3d(50vw, 0, 0) translateY(30px) rotate(4deg);
+    transform: translate3d(50vw, 0, 0) translateY(25px) rotate(4deg);
   }
   100% {
     transform: translate3d(100vw, 0, 0) translateY(-15px) rotate(-2deg);
@@ -108,15 +108,15 @@
 }
 
 .animate-swim-left {
-  animation: swimLeft 18s linear infinite -2s;
+  animation: swimLeft 18s linear infinite -6s;
 }
 
 .animate-swim-right {
-  animation: swimRight 22s linear infinite -8s;
+  animation: swimRight 22s linear infinite -11s;
 }
 
 .animate-swim-left-slow {
-  animation: swimLeft 28s linear infinite -14s;
+  animation: swimLeft 28s linear infinite -16s;
 }
 
 .animate-bubble-1 {
