@@ -17,3 +17,53 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* Animações Customizadas de Alto Impacto */
+@keyframes sonar-wave {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes border-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gold-shine {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(200%) rotate(25deg);
+  }
+}
+
+.animate-sonar {
+  animation: sonar-wave 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-sonar-delayed {
+  animation: sonar-wave 3s cubic-bezier(0, 0.2, 0.8, 1) infinite 1.5s;
+}
+
+.animate-border-glow {
+  background-size: 200% 200%;
+  animation: border-rotate 4s ease infinite;
+}
+
+.animate-gold-shine {
+  animation: gold-shine 3s ease-in-out infinite;
+}

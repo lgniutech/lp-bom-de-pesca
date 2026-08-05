@@ -3,10 +3,14 @@ import CommunityCard from "@/components/CommunityCard";
 import ContactCard from "@/components/ContactCard";
 import TorneioCards from "@/components/TorneioCards";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import StickyTopBanner from "@/components/StickyTopBanner";
 
 export default function Home() {
   return (
     <>
+      {/* Barra Fixa no Topo (100% Visível no Scroll) */}
+      <StickyTopBanner />
+
       {/* JSON-LD mantido estrito para SEO */}
       <script
         type="application/ld+json" 

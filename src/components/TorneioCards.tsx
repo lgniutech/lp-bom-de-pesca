@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimateOnScroll from "./AnimateOnScroll";
-import CountdownTimer from "./CountdownTimer";
+import CountdownHero from "./CountdownHero";
 
 export default function TorneioCards() {
   return (
     <div className="w-full flex flex-col gap-8">
-      {/* 0. Cronômetro de Inscrições do 4º Torneio */}
+      {/* 0. Cronômetro Hero Sonar de Alto Impacto */}
       <AnimateOnScroll direction="left">
-        <CountdownTimer />
+        <CountdownHero />
       </AnimateOnScroll>
 
       {/* 1. Inscrição do 4º Torneio */}
