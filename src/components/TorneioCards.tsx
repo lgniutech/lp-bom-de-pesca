@@ -1,10 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimateOnScroll from "./AnimateOnScroll";
+import CountdownTimer from "./CountdownTimer";
 
 export default function TorneioCards() {
   return (
     <div className="w-full flex flex-col gap-8">
+      {/* 0. Cronômetro de Inscrições do 4º Torneio */}
+      <AnimateOnScroll direction="left">
+        <CountdownTimer />
+      </AnimateOnScroll>
+
       {/* 1. Inscrição do 4º Torneio */}
       <AnimateOnScroll direction="left">
         <Link
