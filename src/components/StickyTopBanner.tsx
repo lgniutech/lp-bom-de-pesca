@@ -86,11 +86,12 @@ export default function StickyTopBanner() {
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#f26419]"></span>
           </span>
           
-          <p className="text-[11px] sm:text-sm font-semibold truncate tracking-tight">
-            <span className="text-[#f26419] uppercase font-bold">4º Torneio Bom de Pesca:</span>{" "}
+          <p className="text-[11px] sm:text-sm font-semibold tracking-tight whitespace-nowrap">
+            <span className="text-[#f26419] uppercase font-bold">4º Torneio:</span>{" "}
             <span className="hidden md:inline text-gray-200">
               Inscrições e a chance de concorrer a mais de R$ 70.000 em prêmios se encerram em:
             </span>
+            <span className="md:hidden text-gray-200">Encerra em:</span>
           </p>
         </div>
 

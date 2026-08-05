@@ -20,6 +20,7 @@ export default function CommunityCard() {
             </svg>
             <span className="text-[#25D366] font-bold tracking-wider uppercase text-sm drop-shadow-md">Comunidade VIP</span>
           </div>
+          <div className="w-16 h-1 bg-[#25D366] rounded-full mb-6"></div>
           <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-4 text-white">
             Participe da nossa <span className="text-[#f26419] underline decoration-[#f26419]/50">Comunidade no WhatsApp</span> e tenha acesso a novidades e promoções
           </h2>
