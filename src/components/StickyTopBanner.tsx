@@ -87,11 +87,10 @@ export default function StickyTopBanner() {
           </span>
           
           <p className="text-[11px] sm:text-sm font-semibold tracking-tight whitespace-nowrap">
-            <span className="text-[#f26419] uppercase font-bold">4º Torneio:</span>{" "}
+            <span className="text-[#f26419] uppercase font-bold">4º Torneio</span>
             <span className="hidden md:inline text-gray-200">
-              Inscrições e a chance de concorrer a mais de R$ 70.000 em prêmios se encerram em:
+              : Inscrições e a chance de concorrer a mais de R$ 70.000 em prêmios se encerram em:
             </span>
-            <span className="md:hidden text-gray-200">Encerra em:</span>
           </p>
         </div>
 
@@ -113,10 +112,9 @@ export default function StickyTopBanner() {
             href={REGISTRATION_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 sm:px-5 py-1.5 rounded-full bg-gradient-to-r from-[#f26419] to-[#ff7d3b] hover:from-[#ff7d3b] hover:to-[#f26419] text-white font-extrabold text-[11px] sm:text-sm shadow-[0_0_12px_rgba(242,100,25,0.5)] hover:scale-105 active:scale-95 transition-all duration-300 flex-shrink-0 whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 px-3.5 sm:px-5 py-1.5 rounded-full bg-gradient-to-r from-[#f26419] to-[#ff7d3b] hover:from-[#ff7d3b] hover:to-[#f26419] text-white font-extrabold text-[11px] sm:text-sm shadow-[0_0_12px_rgba(242,100,25,0.5)] hover:scale-105 active:scale-95 transition-all duration-300 flex-shrink-0 whitespace-nowrap"
           >
             <span>Inscreva-se</span>
-            <span className="hidden sm:inline-block">🏆</span>
           </Link>
         </div>
 
