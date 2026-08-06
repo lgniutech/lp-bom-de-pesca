@@ -25,4 +25,4 @@ Landing Page promocional e informativa para Bom de Pesca (loja e 4º Torneio de 
 - Seções do 4º Torneio e Comunidade VIP atualizadas com brasão e links oficiais.
 
 ## Observações importantes
-- Ficha de inscrição marcada como em desenvolvimento aguardando link definitivo.
+- Ficha de inscrição e regulamento atualizados com os novos links do Google Drive.

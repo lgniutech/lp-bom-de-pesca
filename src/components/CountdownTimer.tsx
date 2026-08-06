@@ -20,7 +20,7 @@ interface CountdownTimerProps {
 
 const DEFAULT_TARGET = "2025-09-11T18:30:00-03:00";
 const DEFAULT_REGISTRATION_URL =
-  "https://drive.google.com/file/d/1gd-JxgU0-hwIeDjnHAlJTXbOTsecAu-Y/view?usp=sharing";
+  "https://drive.google.com/file/d/11OXo6eztHuum3PrByyAuLLkHUhLh1nDQ/view?usp=sharing";
 
 function calculateTimeLeft(targetIso: string): TimeLeft {
   const targetTime = new Date(targetIso).getTime();

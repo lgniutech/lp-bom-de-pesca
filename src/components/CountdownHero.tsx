@@ -13,7 +13,7 @@ interface TimeLeft {
 }
 
 const REGISTRATION_URL =
-  "https://drive.google.com/file/d/1gd-JxgU0-hwIeDjnHAlJTXbOTsecAu-Y/view?usp=sharing";
+  "https://drive.google.com/file/d/11OXo6eztHuum3PrByyAuLLkHUhLh1nDQ/view?usp=sharing";
 
 /**
   Retorna o timestamp da data alvo do torneio no fuso horário de Itumbiara-GO (UTC-3 / Horário de Brasília).
