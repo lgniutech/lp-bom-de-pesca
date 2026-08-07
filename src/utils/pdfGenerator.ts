@@ -42,23 +42,23 @@ export function generateRegistrationPDF(data: RegistrationFormData): void {
 
   // CAPITÃO
   doc.setFont("helvetica", "normal");
-  doc.text(`●  1º Nome completo do Capitão: ${data.capitao.nome}`, margin + 4, y); y += 6;
-  doc.text(`●  Cidade e Estado: ${data.capitao.cidadeEstado}`, margin + 4, y); y += 6;
-  doc.text(`●  Telefone Celular: ${data.capitao.telefone}`, margin + 4, y); y += 6;
-  doc.text(`●  RG Ou CPF: ${data.capitao.documento}`, margin + 4, y); y += 10;
+  doc.text(`-  1º Nome completo do Capitão: ${data.capitao.nome}`, margin + 4, y); y += 6;
+  doc.text(`-  Cidade e Estado: ${data.capitao.cidadeEstado}`, margin + 4, y); y += 6;
+  doc.text(`-  Telefone Celular: ${data.capitao.telefone}`, margin + 4, y); y += 6;
+  doc.text(`-  RG Ou CPF: ${data.capitao.documento}`, margin + 4, y); y += 10;
 
   // 2º PESCADOR
-  doc.text(`●  Nome completo do 2º Pescador: ${data.segundoPescador.nome}`, margin + 4, y); y += 6;
-  doc.text(`●  Cidade e Estado: ${data.segundoPescador.cidadeEstado}`, margin + 4, y); y += 6;
-  doc.text(`●  Telefone Celular: ${data.segundoPescador.telefone}`, margin + 4, y); y += 6;
-  doc.text(`●  RG Ou CPF: ${data.segundoPescador.documento}`, margin + 4, y); y += 10;
+  doc.text(`-  Nome completo do 2º Pescador: ${data.segundoPescador.nome}`, margin + 4, y); y += 6;
+  doc.text(`-  Cidade e Estado: ${data.segundoPescador.cidadeEstado}`, margin + 4, y); y += 6;
+  doc.text(`-  Telefone Celular: ${data.segundoPescador.telefone}`, margin + 4, y); y += 6;
+  doc.text(`-  RG Ou CPF: ${data.segundoPescador.documento}`, margin + 4, y); y += 10;
 
   // 3º PESCADOR
   const p3 = data.terceiroPescador && data.terceiroPescador.nome.trim() ? data.terceiroPescador : null;
-  doc.text(`●  Nome completo do 3º Pescador: ${p3 ? p3.nome : "(Não informado)"}`, margin + 4, y); y += 6;
-  doc.text(`●  Cidade e Estado: ${p3 ? p3.cidadeEstado : "-"}`, margin + 4, y); y += 6;
-  doc.text(`●  Telefone Celular: ${p3 ? p3.telefone : "-"}`, margin + 4, y); y += 6;
-  doc.text(`●  RG Ou CPF: ${p3 ? p3.documento : "-"}`, margin + 4, y); y += 12;
+  doc.text(`-  Nome completo do 3º Pescador: ${p3 ? p3.nome : "(Não informado)"}`, margin + 4, y); y += 6;
+  doc.text(`-  Cidade e Estado: ${p3 ? p3.cidadeEstado : "-"}`, margin + 4, y); y += 6;
+  doc.text(`-  Telefone Celular: ${p3 ? p3.telefone : "-"}`, margin + 4, y); y += 6;
+  doc.text(`-  RG Ou CPF: ${p3 ? p3.documento : "-"}`, margin + 4, y); y += 12;
 
   // VALORES
   doc.setFont("helvetica", "bold");
