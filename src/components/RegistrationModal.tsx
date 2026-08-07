@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { RegistrationFormData, openWhatsAppRegistration } from "@/utils/whatsapp";
-import { generateRegistrationImage } from "@/utils/imageGenerator";
+import { generateRegistrationPDF } from "@/utils/pdfGenerator";
 import FormCardPreview from "./FormCardPreview";
 
 interface RegistrationModalProps {
@@ -529,13 +529,13 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
               {/* Botões de Ação Separados no Passo 4 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 
-                {/* BOTÃO 1: BAIXAR FICHA (PDF/IMAGEM) */}
+                {/* BOTÃO 1: BAIXAR FICHA EM PDF */}
                 <button
                   type="button"
-                  onClick={async () => {
+                  onClick={() => {
                     setIsGenerating(true);
                     try {
-                      await generateRegistrationImage(formData);
+                      generateRegistrationPDF(formData);
                     } catch (e) {
                       console.error(e);
                     } finally {
@@ -545,8 +545,8 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                   disabled={isGenerating}
                   className="w-full py-3.5 px-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                 >
-                  <span className="text-lg">📥</span>
-                  <span>{isGenerating ? "Baixando..." : "1. Baixar Ficha de Inscrição"}</span>
+                  <span className="text-lg">📄</span>
+                  <span>{isGenerating ? "Gerando PDF..." : "1. Baixar Ficha de Inscrição em PDF"}</span>
                 </button>
 
                 {/* BOTÃO 2: ENVIAR NO WHATSAPP */}

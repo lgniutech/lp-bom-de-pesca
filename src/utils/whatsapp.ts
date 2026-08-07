@@ -13,7 +13,7 @@ export interface RegistrationFormData {
   terceiroPescador?: PescadorData;
 }
 
-export const TARGET_WHATSAPP_NUMBER = "5516996201039";
+export const TARGET_WHATSAPP_NUMBER = "5564992968588";
 
 export function formatWhatsAppMessage(data: RegistrationFormData): string {
   let message = `*INSCRIÇÃO - 4º TORNEIO BOM DE PESCA ITUMBIARA-GO*\n\n`;
@@ -47,7 +47,7 @@ export function formatWhatsAppMessage(data: RegistrationFormData): string {
   message += `- Chave Pix (Celular): 64992968588\n`;
   message += `- Nome: Carla Araujo Pelissari ou Bom de Pesca\n\n`;
 
-  message += `*ATENÇÃO:* A Ficha de Inscrição Oficial já foi salva no meu dispositivo! Estou anexando ela aqui via Documento/Arquivo para manter a alta definição, junto com o meu comprovante Pix.`;
+  message += `*ATENÇÃO:* A Ficha de Inscrição Oficial já foi salva no meu dispositivo! Estou anexando ela aqui junto com o meu comprovante Pix para confirmação da inscrição.`;
 
   return message;
 }
