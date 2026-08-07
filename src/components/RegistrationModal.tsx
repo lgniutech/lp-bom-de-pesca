@@ -464,19 +464,30 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 4. Confirmação, Pagamento & Envio
               </h4>
 
+              {/* ALERTA DE CONFIRMAÇÃO DE INSCRIÇÃO */}
+              <div className="p-4 rounded-2xl bg-[#ffb703]/15 border-2 border-[#ffb703] text-xs space-y-2 text-white shadow-[0_0_20px_rgba(255,183,3,0.2)]">
+                <div className="flex items-center gap-2 text-[#ffb703] font-black text-sm uppercase tracking-wider">
+                  <span className="text-lg">⚠️</span>
+                  <span>ATENÇÃO: CONFIRMAÇÃO DA INSCRIÇÃO</span>
+                </div>
+                <p className="text-gray-100 font-semibold leading-relaxed">
+                  A inscrição da sua equipe <strong>só será oficialmente CONFIRMADA</strong> após o envio da <strong>Ficha de Inscrição preenchida</strong> juntamente com o <strong>Comprovante de Pagamento do Pix</strong> para a organização no WhatsApp!
+                </p>
+              </div>
+
               {/* Destaque Importante sobre o Anexo no WhatsApp sem Perda de Qualidade */}
               <div className="p-4 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/40 text-xs space-y-2 text-gray-200">
                 <span className="font-bold text-[#25D366] text-sm block">
-                  💡 Dica importante para a Ficha ficar em Alta Definição:
+                  💡 Passo a Passo para Envio:
                 </span>
                 <p>
-                  1. Ao clicar no botão abaixo, a sua <strong>Ficha de Inscrição Oficial será salva no seu celular/computador</strong>.
+                  1. Clique no botão <strong>"1. Baixar Ficha de Inscrição"</strong> para salvar a ficha no seu dispositivo.
                 </p>
                 <p>
-                  2. O <strong>WhatsApp abrirá automaticamente</strong> com a mensagem preenchida para a organização.
+                  2. Clique no botão <strong>"2. Enviar Inscrição no WhatsApp"</strong> para abrir a conversa com a organização.
                 </p>
                 <p className="bg-[#25D366]/20 p-2.5 rounded-xl border border-[#25D366]/40 text-white font-medium">
-                  ⭐ <strong>Para a ficha não ficar embaçada:</strong> No WhatsApp, toque no <strong>ícone de clipe 📎</strong>, escolha a opção <strong>"Documento"</strong> e selecione a ficha salva (`.png` ou `.pdf`). Assim ela é enviada na qualidade máxima sem o WhatsApp compactar!
+                  ⭐ <strong>No WhatsApp:</strong> Envie a ficha baixada junto com o comprovante do seu Pix!
                 </p>
               </div>
 
