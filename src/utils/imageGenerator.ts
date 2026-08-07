@@ -8,13 +8,25 @@ export async function generateRegistrationImage(data: RegistrationFormData): Pro
     return;
   }
 
+  // Tornar o elemento visível temporariamente fora do fluxo do viewport para captura perfeita pelo html2canvas
+  const container = element.parentElement;
+  if (container) {
+    container.style.position = "fixed";
+    container.style.left = "0";
+    container.style.top = "0";
+    container.style.zIndex = "-9999";
+    container.style.visibility = "visible";
+    container.style.opacity = "1";
+  }
+
   try {
-    // Renderiza a imagem em Alta Definição (scale: 2 ou 3)
+    // Renderiza a imagem em Alta Definição (scale: 2)
     const canvas = await html2canvas(element, {
       scale: 2, // Alta Resolução Full HD
       useCORS: true,
       backgroundColor: "#0c0d1a",
       logging: false,
+      width: 800,
     });
 
     const imageURI = canvas.toDataURL("image/png", 1.0);
@@ -29,5 +41,11 @@ export async function generateRegistrationImage(data: RegistrationFormData): Pro
     document.body.removeChild(link);
   } catch (error) {
     console.error("Erro ao gerar imagem da ficha:", error);
+  } finally {
+    if (container) {
+      container.style.position = "absolute";
+      container.style.left = "-9999px";
+      container.style.top = "-9999px";
+    }
   }
 }
