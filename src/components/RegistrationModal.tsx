@@ -318,25 +318,25 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
             </div>
           )}
 
-          {/* PASSO 2: DADOS DO 2º PESCADOR (OPCIONAL) */}
+          {/* PASSO 2: DADOS DO 2º PESCADOR */}
           {step === 2 && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-white/10 pb-2">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-2 gap-1">
                 <h4 className="text-sm font-black uppercase text-[#f26419] tracking-wider">
-                  2. Informações do 2º Pescador (Opcional)
+                  2. Informações do 2º Pescador
                 </h4>
-                <span className="text-xs bg-white/10 text-gray-300 px-2.5 py-1 rounded-full font-semibold">
-                  Opcional
+                <span className="text-[11px] bg-[#ffb703]/20 text-[#ffb703] border border-[#ffb703]/40 px-2.5 py-1 rounded-full font-bold">
+                  ⚠️ Preencha se houver este pescador na equipe
                 </span>
               </div>
 
               <div>
                 <label className="block text-xs font-bold text-gray-300 mb-1">
-                  Nome Completo do 2º Pescador *
+                  Nome Completo do 2º Pescador
                 </label>
                 <input
                   type="text"
-                  placeholder="Nome completo conforme documento"
+                  placeholder="Nome completo (deixe em branco apenas se competir solo)"
                   value={formData.segundoPescador.nome}
                   onChange={(e) => updateSegundoField("nome", e.target.value)}
                   className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-[#f26419] text-sm"
@@ -346,7 +346,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Cidade / Estado *
+                    Cidade / Estado
                   </label>
                   <input
                     type="text"
@@ -359,7 +359,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Telefone Celular (com DDD) *
+                    Telefone Celular (com DDD)
                   </label>
                   <input
                     type="text"
@@ -372,7 +372,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    RG ou CPF *
+                    RG ou CPF
                   </label>
                   <input
                     type="text"
@@ -386,15 +386,15 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
             </div>
           )}
 
-          {/* PASSO 3: DADOS DO 3º PESCADOR (OPCIONAL) */}
+          {/* PASSO 3: DADOS DO 3º PESCADOR */}
           {step === 3 && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-white/10 pb-2">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-2 gap-1">
                 <h4 className="text-sm font-black uppercase text-[#f26419] tracking-wider">
-                  3. Informações do 3º Pescador (Opcional)
+                  3. Informações do 3º Pescador
                 </h4>
-                <span className="text-xs bg-white/10 text-gray-300 px-2.5 py-1 rounded-full font-semibold">
-                  Opção até 3 pescadores por equipe
+                <span className="text-[11px] bg-[#ffb703]/20 text-[#ffb703] border border-[#ffb703]/40 px-2.5 py-1 rounded-full font-bold">
+                  ⚠️ Preencha se houver este pescador na equipe
                 </span>
               </div>
 
