@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { RegistrationFormData, openWhatsAppRegistration } from "@/utils/whatsapp";
 import { generateRegistrationPDF } from "@/utils/pdfGenerator";
 import FormCardPreview from "./FormCardPreview";
@@ -11,6 +12,7 @@ interface RegistrationModalProps {
 }
 
 export default function RegistrationModal({ isOpen, onClose }: RegistrationModalProps) {
+  const [mounted, setMounted] = useState(false);
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
 
   const [formData, setFormData] = useState<RegistrationFormData>({
@@ -39,42 +41,25 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
   const [errorMsg, setErrorMsg] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
 
-  // Trava de rolagem da página de fundo (body lock) + scroll para topo quando o modal abrir
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Quando o modal abre, reseta para o topo e trava o scroll de fundo suavemente
   useEffect(() => {
     if (isOpen) {
-      // Salva a posição de scroll atual para restaurar ao fechar
-      const scrollY = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
+      // Rola a página até o topo para garantir que o modal abra 100% visível no mobile
+      window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
       document.body.style.overflow = "hidden";
     } else {
-      // Restaura a posição de scroll
-      const top = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
       document.body.style.overflow = "";
-      if (top) {
-        window.scrollTo(0, parseInt(top || "0", 10) * -1);
-      }
     }
     return () => {
-      const top = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
       document.body.style.overflow = "";
-      if (top) {
-        window.scrollTo(0, parseInt(top || "0", 10) * -1);
-      }
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
   // Funções de atualização dos inputs
   const updateEquipeField = (field: "nomeEquipe" | "cidadeEstadoEquipe", value: string) => {
@@ -155,9 +140,10 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
     if (step > 1) setStep((prev) => (prev - 1) as 1 | 2 | 3 | 4);
   };
 
-  return (
+  const modalContent = (
     <div 
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-6 bg-black/90 backdrop-blur-md overflow-hidden animate-fade-in"
+      className="fixed inset-0 z-[99999] flex flex-col items-center justify-start p-2 sm:p-6 bg-black/90 backdrop-blur-md overflow-y-auto animate-fade-in touch-pan-y"
+      style={{ WebkitOverflowScrolling: "touch" }}
       onClick={onClose}
     >
       
@@ -166,8 +152,26 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
         <FormCardPreview data={formData} />
       </div>
 
+      {/* DICA DE ROLAGEM COM SETAS NO TOPO DO MODAL */}
       <div 
-        className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/50 rounded-2xl sm:rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col max-h-[92dvh] sm:max-h-[90vh]"
+        className="w-full max-w-2xl flex items-center justify-between text-xs text-[#ffb703] font-bold py-2.5 px-4 bg-[#1b1c33] rounded-t-2xl border border-b-0 border-[#f26419]/40 mt-2 sm:mt-4 shadow-lg"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <span className="flex items-center gap-1.5 text-xs text-[#ffb703]">
+          <span className="animate-bounce text-base">↓</span>
+          <span>Role para baixo no formulário</span>
+          <span className="animate-bounce text-base">↓</span>
+        </span>
+        <button 
+          onClick={onClose} 
+          className="bg-white/10 hover:bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold transition-colors"
+        >
+          Fechar ✕
+        </button>
+      </div>
+
+      <div 
+        className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/50 rounded-b-2xl sm:rounded-b-3xl shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col mb-8"
         onClick={(e) => e.stopPropagation()}
       >
         
@@ -605,4 +609,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
+
