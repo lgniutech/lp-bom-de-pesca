@@ -464,19 +464,19 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 4. Confirmação, Pagamento & Envio
               </h4>
 
-              {/* Destaque Importante sobre o Anexo da Imagem na Galeria */}
-              <div className="p-4 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/40 text-xs space-y-1.5 text-gray-200">
+              {/* Destaque Importante sobre o Anexo no WhatsApp sem Perda de Qualidade */}
+              <div className="p-4 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/40 text-xs space-y-2 text-gray-200">
                 <span className="font-bold text-[#25D366] text-sm block">
-                  📸 Como funciona o envio da Ficha em Imagem HD:
+                  💡 Dica importante para a Ficha ficar em Alta Definição:
                 </span>
                 <p>
-                  1. Ao clicar no botão abaixo, a <strong>imagem oficial da sua Ficha de Inscrição (em Alta Definição) será salva na sua Galeria de Fotos / Downloads</strong>.
+                  1. Ao clicar no botão abaixo, a sua <strong>Ficha de Inscrição Oficial será salva no seu celular/computador</strong>.
                 </p>
                 <p>
-                  2. Em seguida, o <strong>WhatsApp abrirá automaticamente</strong> já com o texto preenchido.
+                  2. O <strong>WhatsApp abrirá automaticamente</strong> com a mensagem preenchida para a organização.
                 </p>
-                <p>
-                  3. Basta tocar no botão de anexo/câmera no WhatsApp para <strong>selecionar a Imagem da Ficha que está na sua Galeria</strong> e enviar junto com o comprovante Pix!
+                <p className="bg-[#25D366]/20 p-2.5 rounded-xl border border-[#25D366]/40 text-white font-medium">
+                  ⭐ <strong>Para a ficha não ficar embaçada:</strong> No WhatsApp, toque no <strong>ícone de clipe 📎</strong>, escolha a opção <strong>"Documento"</strong> e selecione a ficha salva (`.png` ou `.pdf`). Assim ela é enviada na qualidade máxima sem o WhatsApp compactar!
                 </p>
               </div>
 

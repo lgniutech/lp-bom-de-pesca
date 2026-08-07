@@ -47,7 +47,7 @@ export function formatWhatsAppMessage(data: RegistrationFormData): string {
   message += `- Chave Pix (Celular): 64992968588\n`;
   message += `- Nome: Carla Araujo Pelissari ou Bom de Pesca\n\n`;
 
-  message += `*ATENÇÃO:* A imagem oficial da minha Ficha de Inscrição em Alta Definição já está salva na minha galeria de fotos! Estou anexando ela aqui junto com o meu comprovante Pix.`;
+  message += `*ATENÇÃO:* A Ficha de Inscrição Oficial já foi salva no meu dispositivo! Estou anexando ela aqui via Documento/Arquivo para manter a alta definição, junto com o meu comprovante Pix.`;
 
   return message;
 }
