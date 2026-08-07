@@ -134,7 +134,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
   return (
     <div 
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-6 bg-black/85 backdrop-blur-md overflow-hidden animate-fade-in"
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-start p-2 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto animate-fade-in touch-pan-y"
       onClick={onClose}
     >
       
@@ -143,8 +143,21 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
         <FormCardPreview data={formData} />
       </div>
 
+      {/* DICA / INDICADOR DE ROLAGEM MOBILE SUPERIOR COM SETAS */}
+      <div className="w-full max-w-2xl flex items-center justify-between text-xs text-[#ffb703] font-bold py-2 px-3 bg-black/60 rounded-t-xl border border-b-0 border-[#f26419]/30 mt-auto sm:mt-auto">
+        <span className="flex items-center gap-1">
+          <span className="animate-bounce">↓</span> Arraste para baixo para rolar
+        </span>
+        <button 
+          onClick={onClose} 
+          className="text-gray-400 hover:text-white font-normal underline text-[11px]"
+        >
+          Fechar [x]
+        </button>
+      </div>
+
       <div 
-        className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/50 rounded-2xl sm:rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col h-[90dvh] max-h-[90dvh] sm:max-h-[90vh] my-auto"
+        className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/50 rounded-b-2xl sm:rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col h-[82dvh] max-h-[82dvh] sm:max-h-[88vh] mb-auto"
         onClick={(e) => e.stopPropagation()}
       >
         
