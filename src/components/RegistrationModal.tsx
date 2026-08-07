@@ -39,15 +39,38 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
   const [errorMsg, setErrorMsg] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
 
-  // Trava de rolagem da página de fundo (body lock) quando o modal estiver aberto
+  // Trava de rolagem da página de fundo (body lock) + scroll para topo quando o modal abrir
   useEffect(() => {
     if (isOpen) {
+      // Salva a posição de scroll atual para restaurar ao fechar
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
       document.body.style.overflow = "hidden";
     } else {
+      // Restaura a posição de scroll
+      const top = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "";
+      if (top) {
+        window.scrollTo(0, parseInt(top || "0", 10) * -1);
+      }
     }
     return () => {
+      const top = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "";
+      if (top) {
+        window.scrollTo(0, parseInt(top || "0", 10) * -1);
+      }
     };
   }, [isOpen]);
 
@@ -134,7 +157,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
   return (
     <div 
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-start p-2 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto animate-fade-in touch-pan-y"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-6 bg-black/90 backdrop-blur-md overflow-hidden animate-fade-in"
       onClick={onClose}
     >
       
@@ -143,21 +166,8 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
         <FormCardPreview data={formData} />
       </div>
 
-      {/* DICA / INDICADOR DE ROLAGEM MOBILE SUPERIOR COM SETAS */}
-      <div className="w-full max-w-2xl flex items-center justify-between text-xs text-[#ffb703] font-bold py-2 px-3 bg-black/60 rounded-t-xl border border-b-0 border-[#f26419]/30 mt-auto sm:mt-auto">
-        <span className="flex items-center gap-1">
-          <span className="animate-bounce">↓</span> Arraste para baixo para rolar
-        </span>
-        <button 
-          onClick={onClose} 
-          className="text-gray-400 hover:text-white font-normal underline text-[11px]"
-        >
-          Fechar [x]
-        </button>
-      </div>
-
       <div 
-        className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/50 rounded-b-2xl sm:rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col h-[82dvh] max-h-[82dvh] sm:max-h-[88vh] mb-auto"
+        className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/50 rounded-2xl sm:rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col max-h-[92dvh] sm:max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
       >
         
