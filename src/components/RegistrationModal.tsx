@@ -515,6 +515,44 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 <strong className="text-white block mb-1">Termo de Declaração e Isenção de Responsabilidade:</strong>
                 Declaramos ter tido conhecimento integral do Regulamento do 4º Torneio Bom de Pesca e com ele concordado. Declaramos estar cientes da obrigatoriedade do uso de coletes salva-vidas e de estarmos em ordem com a documentação pessoal e da embarcação. Assumimos todos os riscos envolvidos e isentamos organizadores e patrocinadores de qualquer responsabilidade.
               </div>
+              {/* Botões de Ação Separados no Passo 4 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                
+                {/* BOTÃO 1: BAIXAR FICHA (PDF/IMAGEM) */}
+                <button
+                  type="button"
+                  onClick={async () => {
+                    setIsGenerating(true);
+                    try {
+                      await generateRegistrationImage(formData);
+                    } catch (e) {
+                      console.error(e);
+                    } finally {
+                      setIsGenerating(false);
+                    }
+                  }}
+                  disabled={isGenerating}
+                  className="w-full py-3.5 px-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                >
+                  <span className="text-lg">📥</span>
+                  <span>{isGenerating ? "Baixando..." : "1. Baixar Ficha de Inscrição"}</span>
+                </button>
+
+                {/* BOTÃO 2: ENVIAR NO WHATSAPP */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    openWhatsAppRegistration(formData);
+                  }}
+                  className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-[#25D366] to-[#1eb854] hover:from-[#29e36f] hover:to-[#22c75b] text-white font-black text-xs uppercase tracking-wider shadow-[0_6px_25px_rgba(37,211,102,0.4)] flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                >
+                  <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.217 8.217 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.182 8.182 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.98-.15.17-.3.19-.55.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.45.06-.69.32-.24.25-.92.9-.92 2.2 0 1.3 1 2.56 1.14 2.75.14.19 1.97 3.01 4.78 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.66-.68 1.89-1.34.23-.66.23-1.23.16-1.34-.07-.11-.23-.17-.48-.3z"/>
+                  </svg>
+                  <span>2. Enviar Inscrição no WhatsApp</span>
+                </button>
+
+              </div>
             </div>
           )}
 
@@ -534,24 +572,13 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
             <div></div>
           )}
 
-          {step < 4 ? (
+          {step < 4 && (
             <button
               onClick={handleNext}
               className="px-7 py-3 rounded-full bg-[#f26419] hover:bg-[#ff7d3b] text-white font-black text-xs uppercase tracking-wider shadow-[0_4px_15px_rgba(242,100,25,0.4)] transition-all flex items-center gap-2"
             >
               <span>Próximo Passo</span>
               <span>→</span>
-            </button>
-          ) : (
-            <button
-              onClick={handleSubmitAndSend}
-              disabled={isGenerating}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-[#25D366] to-[#1eb854] hover:from-[#29e36f] hover:to-[#22c75b] text-white font-black text-sm uppercase tracking-wider shadow-[0_6px_25px_rgba(37,211,102,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 disabled:opacity-50 cursor-pointer"
-            >
-              <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.217 8.217 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.182 8.182 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.98-.15.17-.3.19-.55.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.45.06-.69.32-.24.25-.92.9-.92 2.2 0 1.3 1 2.56 1.14 2.75.14.19 1.97 3.01 4.78 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.66-.68 1.89-1.34.23-.66.23-1.23.16-1.34-.07-.11-.23-.17-.48-.3z"/>
-              </svg>
-              <span>{isGenerating ? "Gerando Ficha HD..." : "Salvar Ficha na Galeria & Enviar no WhatsApp"}</span>
             </button>
           )}
         </div>
