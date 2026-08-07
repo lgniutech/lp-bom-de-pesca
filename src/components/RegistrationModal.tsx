@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { RegistrationFormData, openWhatsAppRegistration } from "@/utils/whatsapp";
-import { generateRegistrationPDF } from "@/utils/pdfGenerator";
+import { generateRegistrationImage } from "@/utils/imageGenerator";
+import FormCardPreview from "./FormCardPreview";
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -36,6 +37,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
   });
 
   const [errorMsg, setErrorMsg] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
 
   if (!isOpen) return null;
 
@@ -132,25 +134,40 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
     if (step > 1) setStep((prev) => (prev - 1) as 1 | 2 | 3 | 4);
   };
 
-  // Finalizar: Baixar PDF + Abrir WhatsApp
-  const handleSubmitAndSend = () => {
+  // Finalizar: Gerar Imagem HD (Galeria) + Abrir WhatsApp
+  const handleSubmitAndSend = async () => {
     if (!validateStep(1) || !validateStep(2)) {
       alert("Por favor, preencha os campos obrigatórios da equipe e dos pescadores.");
       return;
     }
 
-    // 1. Gerar e Baixar o PDF da Ficha Preenchida no dispositivo
-    generateRegistrationPDF(formData);
+    setIsGenerating(true);
 
-    // 2. Redirecionar para o WhatsApp preenchido
-    openWhatsAppRegistration(formData);
+    try {
+      // 1. Gerar e Salvar a Imagem HD na galeria/downloads do dispositivo
+      await generateRegistrationImage(formData);
 
-    // 3. Fechar o modal
-    onClose();
+      // 2. Redirecionar para o WhatsApp preenchido
+      openWhatsAppRegistration(formData);
+
+      // 3. Fechar o modal
+      onClose();
+    } catch (e) {
+      console.error(e);
+      alert("Ocorreu um erro ao gerar a imagem da ficha. Tente novamente.");
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto animate-fade-in">
+      
+      {/* CARD OCULTO FORA DA TELA UTILIZADO APENAS PARA CONVERSÃO EM IMAGEM HD */}
+      <div className="absolute top-[-9999px] left-[-9999px] pointer-events-none">
+        <FormCardPreview data={formData} />
+      </div>
+
       <div className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/40 rounded-3xl shadow-[0_0_50px_rgba(242,100,25,0.25)] overflow-hidden flex flex-col max-h-[90vh]">
         
         {/* Cabeçalho do Modal */}
@@ -447,19 +464,19 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 4. Confirmação, Pagamento & Envio
               </h4>
 
-              {/* Destaque Importante sobre o Anexo no WhatsApp */}
+              {/* Destaque Importante sobre o Anexo da Imagem na Galeria */}
               <div className="p-4 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/40 text-xs space-y-1.5 text-gray-200">
                 <span className="font-bold text-[#25D366] text-sm block">
-                  📌 Como funciona o envio final:
+                  📸 Como funciona o envio da Ficha em Imagem HD:
                 </span>
                 <p>
-                  1. Ao clicar no botão abaixo, a sua <strong>Ficha de Inscrição em PDF será baixada automaticamente</strong> no seu celular ou computador.
+                  1. Ao clicar no botão abaixo, a <strong>imagem oficial da sua Ficha de Inscrição (em Alta Definição) será salva na sua Galeria de Fotos / Downloads</strong>.
                 </p>
                 <p>
-                  2. Em seguida, o <strong>WhatsApp abrirá sozinho</strong> já com a mensagem preenchida para a organização.
+                  2. Em seguida, o <strong>WhatsApp abrirá automaticamente</strong> já com o texto preenchido.
                 </p>
                 <p>
-                  3. Basta clicar no ícone de clipe/anexo no WhatsApp para <strong>enviar o PDF baixado</strong> junto com o seu comprovante Pix!
+                  3. Basta tocar no botão de anexo/câmera no WhatsApp para <strong>selecionar a Imagem da Ficha que está na sua Galeria</strong> e enviar junto com o comprovante Pix!
                 </p>
               </div>
 
@@ -508,7 +525,8 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
           {step > 1 ? (
             <button
               onClick={handlePrev}
-              className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-colors"
+              disabled={isGenerating}
+              className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-colors disabled:opacity-50"
             >
               ← Voltar
             </button>
@@ -527,12 +545,13 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
           ) : (
             <button
               onClick={handleSubmitAndSend}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-[#25D366] to-[#1eb854] hover:from-[#29e36f] hover:to-[#22c75b] text-white font-black text-sm uppercase tracking-wider shadow-[0_6px_25px_rgba(37,211,102,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3"
+              disabled={isGenerating}
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-[#25D366] to-[#1eb854] hover:from-[#29e36f] hover:to-[#22c75b] text-white font-black text-sm uppercase tracking-wider shadow-[0_6px_25px_rgba(37,211,102,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 disabled:opacity-50 cursor-pointer"
             >
               <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.217 8.217 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.182 8.182 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.98-.15.17-.3.19-.55.07-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.45.06-.69.32-.24.25-.92.9-.92 2.2 0 1.3 1 2.56 1.14 2.75.14.19 1.97 3.01 4.78 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.66-.68 1.89-1.34.23-.66.23-1.23.16-1.34-.07-.11-.23-.17-.48-.3z"/>
               </svg>
-              <span>Baixar Ficha PDF & Enviar no WhatsApp</span>
+              <span>{isGenerating ? "Gerando Ficha HD..." : "Salvar Ficha na Galeria & Enviar no WhatsApp"}</span>
             </button>
           )}
         </div>
