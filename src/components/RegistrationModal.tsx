@@ -475,19 +475,19 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 </p>
               </div>
 
-              {/* Destaque Importante sobre o Anexo no WhatsApp sem Perda de Qualidade */}
+              {/* Destaque Importante sobre o Anexo e Downloads de PDF no Celular */}
               <div className="p-4 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/40 text-xs space-y-2 text-gray-200">
                 <span className="font-bold text-[#25D366] text-sm block">
-                  💡 Passo a Passo para Envio:
+                  💡 Passo a Passo Simples para a Inscrição:
                 </span>
                 <p>
-                  1. Clique no botão <strong>"1. Baixar Ficha de Inscrição"</strong> para salvar a ficha no seu dispositivo.
+                  1. Clique no botão <strong>"1. Baixar Ficha em PDF"</strong>. O arquivo da sua ficha preenchida em PDF será baixado e salvo na pasta <strong>"Arquivos / Downloads"</strong> do seu celular.
                 </p>
                 <p>
                   2. Clique no botão <strong>"2. Enviar Inscrição no WhatsApp"</strong> para abrir a conversa com a organização.
                 </p>
                 <p className="bg-[#25D366]/20 p-2.5 rounded-xl border border-[#25D366]/40 text-white font-medium">
-                  ⭐ <strong>No WhatsApp:</strong> Envie a ficha baixada junto com o comprovante do seu Pix!
+                  ⭐ <strong>No WhatsApp:</strong> Envie o PDF que foi baixado nos seus arquivos junto com o comprovante do Pix!
                 </p>
               </div>
 
