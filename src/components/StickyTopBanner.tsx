@@ -50,7 +50,11 @@ function calculateTimeLeft(): TimeLeft {
   };
 }
 
-export default function StickyTopBanner() {
+interface StickyTopBannerProps {
+  onOpenRegistrationModal?: () => void;
+}
+
+export default function StickyTopBanner({ onOpenRegistrationModal }: StickyTopBannerProps) {
   const [mounted, setMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
@@ -107,15 +111,24 @@ export default function StickyTopBanner() {
             <span className="text-[#f26419] animate-pulse">{formatNumber(timeLeft.seconds)}<span className="text-[9px] sm:text-[10px] text-[#f26419]/70 font-normal">s</span></span>
           </div>
 
-          {/* CTA Botão Direto */}
-          <Link
-            href={REGISTRATION_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 sm:px-5 py-1.5 rounded-full bg-gradient-to-r from-[#f26419] to-[#ff7d3b] hover:from-[#ff7d3b] hover:to-[#f26419] text-white font-extrabold text-[11px] sm:text-sm shadow-[0_0_12px_rgba(242,100,25,0.5)] hover:scale-105 active:scale-95 transition-all duration-300 flex-shrink-0 whitespace-nowrap"
-          >
-            <span>Inscreva-se</span>
-          </Link>
+          {/* CTA Botão Direto - Abre o Modal Interativo de Inscrição */}
+          {onOpenRegistrationModal ? (
+            <button
+              onClick={onOpenRegistrationModal}
+              className="inline-flex items-center gap-1.5 px-3.5 sm:px-5 py-1.5 rounded-full bg-gradient-to-r from-[#f26419] to-[#ff7d3b] hover:from-[#ff7d3b] hover:to-[#f26419] text-white font-extrabold text-[11px] sm:text-sm shadow-[0_0_12px_rgba(242,100,25,0.5)] hover:scale-105 active:scale-95 transition-all duration-300 flex-shrink-0 whitespace-nowrap cursor-pointer"
+            >
+              <span>Inscreva-se</span>
+            </button>
+          ) : (
+            <Link
+              href={REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 sm:px-5 py-1.5 rounded-full bg-gradient-to-r from-[#f26419] to-[#ff7d3b] hover:from-[#ff7d3b] hover:to-[#f26419] text-white font-extrabold text-[11px] sm:text-sm shadow-[0_0_12px_rgba(242,100,25,0.5)] hover:scale-105 active:scale-95 transition-all duration-300 flex-shrink-0 whitespace-nowrap"
+            >
+              <span>Inscreva-se</span>
+            </Link>
+          )}
         </div>
 
       </div>

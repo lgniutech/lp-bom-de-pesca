@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Header from "@/components/Header";
 import CommunityCard from "@/components/CommunityCard";
 import ContactCard from "@/components/ContactCard";
@@ -5,15 +8,24 @@ import TorneioCards from "@/components/TorneioCards";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import StickyTopBanner from "@/components/StickyTopBanner";
 import SwimmingFishLayer from "@/components/SwimmingFishLayer";
+import RegistrationModal from "@/components/RegistrationModal";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       {/* Camada Interativa de Peixes Nadando no Fundo */}
       <SwimmingFishLayer />
 
       {/* Barra Fixa no Topo (100% Visível no Scroll) */}
-      <StickyTopBanner />
+      <StickyTopBanner onOpenRegistrationModal={() => setIsModalOpen(true)} />
+
+      {/* Modal de Inscrição Oficial */}
+      <RegistrationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
 
       {/* JSON-LD mantido estrito para SEO */}
       <script
