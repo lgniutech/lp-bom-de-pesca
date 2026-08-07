@@ -80,7 +80,7 @@ export default function StickyTopBanner({ onOpenRegistrationModal }: StickyTopBa
   const formatNumber = (num: number) => String(num).padStart(2, "0");
 
   return (
-    <div className="sticky top-0 z-50 w-full bg-[#0d0d1a]/95 backdrop-blur-xl border-b border-[#f26419]/40 shadow-[0_8px_25px_rgba(0,0,0,0.85)]">
+    <div className="sticky top-0 z-40 w-full bg-[#0d0d1a]/95 backdrop-blur-xl border-b border-[#f26419]/40 shadow-[0_8px_25px_rgba(0,0,0,0.85)]">
       <div className="max-w-7xl mx-auto px-2.5 sm:px-6 py-2 flex items-center justify-between gap-2 text-white">
         
         {/* Esquerda: Alerta Pulsante */}

@@ -161,14 +161,20 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto animate-fade-in">
+    <div 
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto animate-fade-in"
+      onClick={onClose}
+    >
       
       {/* CARD OCULTO FORA DA TELA UTILIZADO APENAS PARA CONVERSÃO EM IMAGEM HD */}
       <div className="absolute top-[-9999px] left-[-9999px] pointer-events-none">
         <FormCardPreview data={formData} />
       </div>
 
-      <div className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/40 rounded-3xl shadow-[0_0_50px_rgba(242,100,25,0.25)] overflow-hidden flex flex-col max-h-[90vh]">
+      <div 
+        className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/50 rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col max-h-[85vh] sm:max-h-[90vh] my-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Cabeçalho do Modal */}
         <div className="flex items-center justify-between px-6 py-5 bg-gradient-to-r from-[#17182c] via-[#222340] to-[#17182c] border-b border-white/10">
