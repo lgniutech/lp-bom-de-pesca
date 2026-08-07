@@ -102,22 +102,8 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
     }
 
     if (currentStep === 2) {
-      if (!formData.segundoPescador.nome.trim()) {
-        setErrorMsg("Por favor, informe o nome completo do 2º Pescador.");
-        return false;
-      }
-      if (!formData.segundoPescador.cidadeEstado.trim()) {
-        setErrorMsg("Por favor, informe a Cidade/UF do 2º Pescador.");
-        return false;
-      }
-      if (!formData.segundoPescador.telefone.trim()) {
-        setErrorMsg("Por favor, informe o celular do 2º Pescador.");
-        return false;
-      }
-      if (!formData.segundoPescador.documento.trim()) {
-        setErrorMsg("Por favor, informe o RG ou CPF do 2º Pescador.");
-        return false;
-      }
+      // 2º Pescador é opcional
+      return true;
     }
 
     return true;
@@ -332,12 +318,17 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
             </div>
           )}
 
-          {/* PASSO 2: DADOS DO 2º PESCADOR */}
+          {/* PASSO 2: DADOS DO 2º PESCADOR (OPCIONAL) */}
           {step === 2 && (
             <div className="space-y-4">
-              <h4 className="text-sm font-black uppercase text-[#f26419] tracking-wider border-b border-white/10 pb-2">
-                2. Informações do 2º Pescador
-              </h4>
+              <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                <h4 className="text-sm font-black uppercase text-[#f26419] tracking-wider">
+                  2. Informações do 2º Pescador (Opcional)
+                </h4>
+                <span className="text-xs bg-white/10 text-gray-300 px-2.5 py-1 rounded-full font-semibold">
+                  Opcional
+                </span>
+              </div>
 
               <div>
                 <label className="block text-xs font-bold text-gray-300 mb-1">
