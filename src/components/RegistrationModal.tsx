@@ -447,6 +447,22 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 4. Confirmação, Pagamento & Envio
               </h4>
 
+              {/* Destaque Importante sobre o Anexo no WhatsApp */}
+              <div className="p-4 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/40 text-xs space-y-1.5 text-gray-200">
+                <span className="font-bold text-[#25D366] text-sm block">
+                  📌 Como funciona o envio final:
+                </span>
+                <p>
+                  1. Ao clicar no botão abaixo, a sua <strong>Ficha de Inscrição em PDF será baixada automaticamente</strong> no seu celular ou computador.
+                </p>
+                <p>
+                  2. Em seguida, o <strong>WhatsApp abrirá sozinho</strong> já com a mensagem preenchida para a organização.
+                </p>
+                <p>
+                  3. Basta clicar no ícone de clipe/anexo no WhatsApp para <strong>enviar o PDF baixado</strong> junto com o seu comprovante Pix!
+                </p>
+              </div>
+
               {/* Resumo da Inscrição */}
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-xs space-y-2">
                 <p className="text-white font-bold text-sm">
