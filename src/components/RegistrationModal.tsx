@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RegistrationFormData, openWhatsAppRegistration } from "@/utils/whatsapp";
 import { generateRegistrationPDF } from "@/utils/pdfGenerator";
 import FormCardPreview from "./FormCardPreview";
@@ -38,6 +38,18 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
   const [errorMsg, setErrorMsg] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
+
+  // Trava de rolagem da página de fundo (body lock) quando o modal estiver aberto
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -120,35 +132,9 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
     if (step > 1) setStep((prev) => (prev - 1) as 1 | 2 | 3 | 4);
   };
 
-  // Finalizar: Gerar Imagem HD (Galeria) + Abrir WhatsApp
-  const handleSubmitAndSend = async () => {
-    if (!validateStep(1) || !validateStep(2)) {
-      alert("Por favor, preencha os campos obrigatórios da equipe e dos pescadores.");
-      return;
-    }
-
-    setIsGenerating(true);
-
-    try {
-      // 1. Gerar e Salvar a Imagem HD na galeria/downloads do dispositivo
-      await generateRegistrationImage(formData);
-
-      // 2. Redirecionar para o WhatsApp preenchido
-      openWhatsAppRegistration(formData);
-
-      // 3. Fechar o modal
-      onClose();
-    } catch (e) {
-      console.error(e);
-      alert("Ocorreu um erro ao gerar a imagem da ficha. Tente novamente.");
-    } finally {
-      setIsGenerating(false);
-    }
-  };
-
   return (
     <div 
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto animate-fade-in"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-6 bg-black/85 backdrop-blur-md overflow-hidden animate-fade-in"
       onClick={onClose}
     >
       
@@ -158,7 +144,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
       </div>
 
       <div 
-        className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/50 rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col max-h-[85vh] sm:max-h-[90vh] my-auto"
+        className="relative w-full max-w-2xl bg-[#121324] border border-[#f26419]/50 rounded-2xl sm:rounded-3xl shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col h-[90dvh] max-h-[90dvh] sm:max-h-[90vh] my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         
@@ -495,10 +481,12 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 </p>
                 <div className="text-gray-300 space-y-1">
                   <p>• Capitão: {formData.capitao.nome} ({formData.capitao.telefone})</p>
-                  <p>• 2º Pescador: {formData.segundoPescador.nome} ({formData.segundoPescador.telefone})</p>
-                  {formData.terceiroPescador?.nome && (
-                    <p>• 3º Pescador: {formData.terceiroPescador.nome} ({formData.terceiroPescador.telefone})</p>
-                  )}
+                  <p>
+                    • 2º Pescador: {formData.segundoPescador?.nome?.trim() ? `${formData.segundoPescador.nome} (${formData.segundoPescador.telefone || "Sem tel"})` : "(Não informado)"}
+                  </p>
+                  <p>
+                    • 3º Pescador: {formData.terceiroPescador?.nome?.trim() ? `${formData.terceiroPescador.nome} (${formData.terceiroPescador.telefone || "Sem tel"})` : "(Não informado)"}
+                  </p>
                 </div>
               </div>
 

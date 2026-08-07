@@ -26,21 +26,26 @@ export function formatWhatsAppMessage(data: RegistrationFormData): string {
   message += `- Celular: ${data.capitao.telefone.trim()}\n`;
   message += `- RG/CPF: ${data.capitao.documento.trim()}\n\n`;
 
-  message += `*2º PESCADOR:*\n`;
-  message += `- Nome: ${data.segundoPescador.nome.trim()}\n`;
-  message += `- Cidade/UF: ${data.segundoPescador.cidadeEstado.trim()}\n`;
-  message += `- Celular: ${data.segundoPescador.telefone.trim()}\n`;
-  message += `- RG/CPF: ${data.segundoPescador.documento.trim()}\n\n`;
+  // 2º Pescador (se informado)
+  if (data.segundoPescador && data.segundoPescador.nome && data.segundoPescador.nome.trim().length > 0) {
+    message += `*2º PESCADOR:*\n`;
+    message += `- Nome: ${data.segundoPescador.nome.trim()}\n`;
+    message += `- Cidade/UF: ${data.segundoPescador.cidadeEstado.trim() || "-"}\n`;
+    message += `- Celular: ${data.segundoPescador.telefone.trim() || "-"}\n`;
+    message += `- RG/CPF: ${data.segundoPescador.documento.trim() || "-"}\n\n`;
+  } else {
+    message += `*2º PESCADOR:* (Não informado)\n\n`;
+  }
 
-  if (
-    data.terceiroPescador &&
-    data.terceiroPescador.nome.trim().length > 0
-  ) {
+  // 3º Pescador (se informado)
+  if (data.terceiroPescador && data.terceiroPescador.nome && data.terceiroPescador.nome.trim().length > 0) {
     message += `*3º PESCADOR:*\n`;
     message += `- Nome: ${data.terceiroPescador.nome.trim()}\n`;
-    message += `- Cidade/UF: ${data.terceiroPescador.cidadeEstado.trim()}\n`;
-    message += `- Celular: ${data.terceiroPescador.telefone.trim()}\n`;
-    message += `- RG/CPF: ${data.terceiroPescador.documento.trim()}\n\n`;
+    message += `- Cidade/UF: ${data.terceiroPescador.cidadeEstado.trim() || "-"}\n`;
+    message += `- Celular: ${data.terceiroPescador.telefone.trim() || "-"}\n`;
+    message += `- RG/CPF: ${data.terceiroPescador.documento.trim() || "-"}\n\n`;
+  } else {
+    message += `*3º PESCADOR:* (Não informado)\n\n`;
   }
 
   message += `*INFORMAÇÕES PARA PAGAMENTO (PIX):*\n`;

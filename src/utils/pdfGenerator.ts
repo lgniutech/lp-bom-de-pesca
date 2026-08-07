@@ -48,13 +48,14 @@ export function generateRegistrationPDF(data: RegistrationFormData): void {
   doc.text(`-  RG Ou CPF: ${data.capitao.documento}`, margin + 4, y); y += 10;
 
   // 2º PESCADOR
-  doc.text(`-  Nome completo do 2º Pescador: ${data.segundoPescador.nome}`, margin + 4, y); y += 6;
-  doc.text(`-  Cidade e Estado: ${data.segundoPescador.cidadeEstado}`, margin + 4, y); y += 6;
-  doc.text(`-  Telefone Celular: ${data.segundoPescador.telefone}`, margin + 4, y); y += 6;
-  doc.text(`-  RG Ou CPF: ${data.segundoPescador.documento}`, margin + 4, y); y += 10;
+  const p2 = data.segundoPescador && data.segundoPescador.nome && data.segundoPescador.nome.trim() ? data.segundoPescador : null;
+  doc.text(`-  Nome completo do 2º Pescador: ${p2 ? p2.nome : "(Não informado)"}`, margin + 4, y); y += 6;
+  doc.text(`-  Cidade e Estado: ${p2 ? p2.cidadeEstado : "-"}`, margin + 4, y); y += 6;
+  doc.text(`-  Telefone Celular: ${p2 ? p2.telefone : "-"}`, margin + 4, y); y += 6;
+  doc.text(`-  RG Ou CPF: ${p2 ? p2.documento : "-"}`, margin + 4, y); y += 10;
 
   // 3º PESCADOR
-  const p3 = data.terceiroPescador && data.terceiroPescador.nome.trim() ? data.terceiroPescador : null;
+  const p3 = data.terceiroPescador && data.terceiroPescador.nome && data.terceiroPescador.nome.trim() ? data.terceiroPescador : null;
   doc.text(`-  Nome completo do 3º Pescador: ${p3 ? p3.nome : "(Não informado)"}`, margin + 4, y); y += 6;
   doc.text(`-  Cidade e Estado: ${p3 ? p3.cidadeEstado : "-"}`, margin + 4, y); y += 6;
   doc.text(`-  Telefone Celular: ${p3 ? p3.telefone : "-"}`, margin + 4, y); y += 6;
