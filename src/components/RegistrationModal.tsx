@@ -17,21 +17,29 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
   const [formData, setFormData] = useState<RegistrationFormData>({
     nomeEquipe: "",
+    cidadeEquipe: "",
+    estadoEquipe: "",
     cidadeEstadoEquipe: "",
     capitao: {
       nome: "",
+      cidade: "",
+      estado: "",
       cidadeEstado: "",
       telefone: "",
       documento: "",
     },
     segundoPescador: {
       nome: "",
+      cidade: "",
+      estado: "",
       cidadeEstado: "",
       telefone: "",
       documento: "",
     },
     terceiroPescador: {
       nome: "",
+      cidade: "",
+      estado: "",
       cidadeEstado: "",
       telefone: "",
       documento: "",
@@ -62,7 +70,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
   if (!isOpen || !mounted) return null;
 
   // Funções de atualização dos inputs
-  const updateEquipeField = (field: "nomeEquipe" | "cidadeEstadoEquipe", value: string) => {
+  const updateEquipeField = (field: keyof RegistrationFormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -84,7 +92,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
     setFormData((prev) => ({
       ...prev,
       terceiroPescador: {
-        ...(prev.terceiroPescador || { nome: "", cidadeEstado: "", telefone: "", documento: "" }),
+        ...(prev.terceiroPescador || { nome: "", cidade: "", estado: "", cidadeEstado: "", telefone: "", documento: "" }),
         [field]: value,
       },
     }));
@@ -99,16 +107,24 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
         setErrorMsg("Por favor, informe o nome da sua equipe.");
         return false;
       }
-      if (!formData.cidadeEstadoEquipe.trim()) {
-        setErrorMsg("Por favor, informe a Cidade e Estado da equipe.");
+      if (!formData.cidadeEquipe.trim() && !formData.cidadeEstadoEquipe?.trim()) {
+        setErrorMsg("Por favor, informe a Cidade da equipe.");
+        return false;
+      }
+      if (!formData.estadoEquipe.trim() && !formData.cidadeEstadoEquipe?.trim()) {
+        setErrorMsg("Por favor, informe o Estado da equipe.");
         return false;
       }
       if (!formData.capitao.nome.trim()) {
         setErrorMsg("Por favor, informe o nome do Capitão.");
         return false;
       }
-      if (!formData.capitao.cidadeEstado.trim()) {
-        setErrorMsg("Por favor, informe a Cidade/UF do Capitão.");
+      if (!formData.capitao.cidade.trim() && !formData.capitao.cidadeEstado?.trim()) {
+        setErrorMsg("Por favor, informe a Cidade do Capitão.");
+        return false;
+      }
+      if (!formData.capitao.estado.trim() && !formData.capitao.cidadeEstado?.trim()) {
+        setErrorMsg("Por favor, informe o Estado do Capitão.");
         return false;
       }
       if (!formData.capitao.telefone.trim()) {
@@ -247,8 +263,8 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 1. Informações da Equipe & Capitão (1º Pescador)
               </h4>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="sm:col-span-1">
                   <label className="block text-xs font-bold text-gray-300 mb-1">
                     Nome da Equipe *
                   </label>
@@ -263,13 +279,26 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Cidade / Estado da Equipe *
+                    Cidade da Equipe *
                   </label>
                   <input
                     type="text"
-                    placeholder="Ex: Itumbiara - GO"
-                    value={formData.cidadeEstadoEquipe}
-                    onChange={(e) => updateEquipeField("cidadeEstadoEquipe", e.target.value)}
+                    placeholder="Ex: Itumbiara"
+                    value={formData.cidadeEquipe}
+                    onChange={(e) => updateEquipeField("cidadeEquipe", e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-[#f26419] text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-300 mb-1">
+                    Estado (UF) da Equipe *
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Ex: GO"
+                    value={formData.estadoEquipe}
+                    onChange={(e) => updateEquipeField("estadoEquipe", e.target.value)}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-[#f26419] text-sm"
                   />
                 </div>
@@ -288,16 +317,29 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Cidade / Estado do Capitão (1º Pescador) *
+                    Cidade do Capitão (1º Pescador) *
                   </label>
                   <input
                     type="text"
-                    placeholder="Ex: Itumbiara - GO"
-                    value={formData.capitao.cidadeEstado}
-                    onChange={(e) => updateCapitaoField("cidadeEstado", e.target.value)}
+                    placeholder="Ex: Itumbiara"
+                    value={formData.capitao.cidade}
+                    onChange={(e) => updateCapitaoField("cidade", e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-[#f26419] text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-300 mb-1">
+                    Estado (UF) do Capitão *
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Ex: GO"
+                    value={formData.capitao.estado}
+                    onChange={(e) => updateCapitaoField("estado", e.target.value)}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-[#f26419] text-sm"
                   />
                 </div>
@@ -356,16 +398,29 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Cidade / Estado (2º Pescador)
+                    Cidade (2º Pescador)
                   </label>
                   <input
                     type="text"
-                    placeholder="Ex: Uberlândia - MG"
-                    value={formData.segundoPescador.cidadeEstado}
-                    onChange={(e) => updateSegundoField("cidadeEstado", e.target.value)}
+                    placeholder="Ex: Uberlândia"
+                    value={formData.segundoPescador.cidade}
+                    onChange={(e) => updateSegundoField("cidade", e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-[#f26419] text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-300 mb-1">
+                    Estado (UF) (2º Pescador)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Ex: MG"
+                    value={formData.segundoPescador.estado}
+                    onChange={(e) => updateSegundoField("estado", e.target.value)}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-[#f26419] text-sm"
                   />
                 </div>
@@ -424,16 +479,29 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Cidade / Estado (3º Pescador)
+                    Cidade (3º Pescador)
                   </label>
                   <input
                     type="text"
-                    placeholder="Ex: Goiânia - GO"
-                    value={formData.terceiroPescador?.cidadeEstado || ""}
-                    onChange={(e) => updateTerceiroField("cidadeEstado", e.target.value)}
+                    placeholder="Ex: Goiânia"
+                    value={formData.terceiroPescador?.cidade || ""}
+                    onChange={(e) => updateTerceiroField("cidade", e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-[#f26419] text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-300 mb-1">
+                    Estado (UF) (3º Pescador)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Ex: GO"
+                    value={formData.terceiroPescador?.estado || ""}
+                    onChange={(e) => updateTerceiroField("estado", e.target.value)}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-[#f26419] text-sm"
                   />
                 </div>
@@ -504,15 +572,15 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
               {/* Resumo da Inscrição */}
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-xs space-y-2">
                 <p className="text-white font-bold text-sm">
-                  Equipe: <span className="text-[#ffb703]">{formData.nomeEquipe}</span> ({formData.cidadeEstadoEquipe})
+                  Equipe: <span className="text-[#ffb703]">{formData.nomeEquipe}</span> ({formData.cidadeEquipe ? `${formData.cidadeEquipe} - ${formData.estadoEquipe}` : (formData.cidadeEstadoEquipe || "-")})
                 </p>
                 <div className="text-gray-300 space-y-1">
-                  <p>• Capitão: {formData.capitao.nome} ({formData.capitao.telefone})</p>
+                  <p>• Capitão: {formData.capitao.nome} ({formData.capitao.cidade ? `${formData.capitao.cidade}/${formData.capitao.estado}` : (formData.capitao.cidadeEstado || "-")}) - {formData.capitao.telefone}</p>
                   <p>
-                    • 2º Pescador: {formData.segundoPescador?.nome?.trim() ? `${formData.segundoPescador.nome} (${formData.segundoPescador.telefone || "Sem tel"})` : "(Não informado)"}
+                    • 2º Pescador: {formData.segundoPescador?.nome?.trim() ? `${formData.segundoPescador.nome} (${formData.segundoPescador.cidade ? `${formData.segundoPescador.cidade}/${formData.segundoPescador.estado}` : (formData.segundoPescador.cidadeEstado || "-")})` : "(Não informado)"}
                   </p>
                   <p>
-                    • 3º Pescador: {formData.terceiroPescador?.nome?.trim() ? `${formData.terceiroPescador.nome} (${formData.terceiroPescador.telefone || "Sem tel"})` : "(Não informado)"}
+                    • 3º Pescador: {formData.terceiroPescador?.nome?.trim() ? `${formData.terceiroPescador.nome} (${formData.terceiroPescador.cidade ? `${formData.terceiroPescador.cidade}/${formData.terceiroPescador.estado}` : (formData.terceiroPescador.cidadeEstado || "-")})` : "(Não informado)"}
                   </p>
                 </div>
               </div>

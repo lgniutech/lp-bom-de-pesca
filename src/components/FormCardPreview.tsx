@@ -55,7 +55,7 @@ export default function FormCardPreview({ data }: FormCardPreviewProps) {
             <span>🏆</span> EQUIPE: <span className="text-white">{data.nomeEquipe.toUpperCase() || "NÃO INFORMADO"}</span>
           </h2>
           <span className="text-xs bg-[#f26419]/20 text-[#ffb703] font-bold px-3 py-1 rounded-full border border-[#f26419]/30">
-            📍 {data.cidadeEstadoEquipe.toUpperCase() || "ITUMBIARA-GO"}
+            📍 {(data.cidadeEquipe ? `${data.cidadeEquipe}${data.estadoEquipe ? ` - ${data.estadoEquipe}` : ""}` : (data.cidadeEstadoEquipe || "ITUMBIARA-GO")).toUpperCase()}
           </span>
         </div>
 
@@ -69,7 +69,7 @@ export default function FormCardPreview({ data }: FormCardPreviewProps) {
               <span>Doc: {data.capitao.documento}</span>
             </div>
             <div className="flex justify-between text-gray-300 text-[11px]">
-              <span>Cidade/UF: {data.capitao.cidadeEstado}</span>
+              <span>Cidade/UF: {data.capitao.cidade ? `${data.capitao.cidade}${data.capitao.estado ? ` - ${data.capitao.estado}` : ""}` : (data.capitao.cidadeEstado || "-")}</span>
               <span>Tel: {data.capitao.telefone}</span>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function FormCardPreview({ data }: FormCardPreviewProps) {
               <span>Doc: {data.segundoPescador.documento}</span>
             </div>
             <div className="flex justify-between text-gray-300 text-[11px]">
-              <span>Cidade/UF: {data.segundoPescador.cidadeEstado}</span>
+              <span>Cidade/UF: {data.segundoPescador.cidade ? `${data.segundoPescador.cidade}${data.segundoPescador.estado ? ` - ${data.segundoPescador.estado}` : ""}` : (data.segundoPescador.cidadeEstado || "-")}</span>
               <span>Tel: {data.segundoPescador.telefone}</span>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function FormCardPreview({ data }: FormCardPreviewProps) {
               <span>Doc: {p3 ? p3.documento : "-"}</span>
             </div>
             <div className="flex justify-between text-gray-300 text-[11px]">
-              <span>Cidade/UF: {p3 ? p3.cidadeEstado : "-"}</span>
+              <span>Cidade/UF: {p3 ? (p3.cidade ? `${p3.cidade}${p3.estado ? ` - ${p3.estado}` : ""}` : (p3.cidadeEstado || "-")) : "-"}</span>
               <span>Tel: {p3 ? p3.telefone : "-"}</span>
             </div>
           </div>

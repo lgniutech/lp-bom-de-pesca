@@ -37,27 +37,39 @@ export function generateRegistrationPDF(data: RegistrationFormData): void {
 
   doc.setFont("helvetica", "bold");
   doc.text(`Nome da equipe: ${data.nomeEquipe.toUpperCase()}`, margin, y); y += 6;
-  doc.text(`Cidade e Estado: ${data.cidadeEstadoEquipe.toUpperCase()}`, margin, y); y += 8;
+  const eqCid = (data.cidadeEquipe || data.cidadeEstadoEquipe || "").toUpperCase();
+  const eqEst = (data.estadoEquipe || "").toUpperCase();
+  doc.text(`Cidade: ${eqCid || "-"}`, margin, y); y += 6;
+  doc.text(`Estado: ${eqEst || "-"}`, margin, y); y += 8;
   doc.text("Obs.: Preencher informações abaixo conforme solicitado:", margin, y); y += 10;
 
   // CAPITÃO
   doc.setFont("helvetica", "normal");
   doc.text(`-  1º Nome completo do Capitão: ${data.capitao.nome}`, margin + 4, y); y += 6;
-  doc.text(`-  Cidade e Estado: ${data.capitao.cidadeEstado}`, margin + 4, y); y += 6;
+  const capCid = data.capitao.cidade || data.capitao.cidadeEstado || "";
+  const capEst = data.capitao.estado || "";
+  doc.text(`-  Cidade: ${capCid || "-"}`, margin + 4, y); y += 6;
+  doc.text(`-  Estado: ${capEst || "-"}`, margin + 4, y); y += 6;
   doc.text(`-  Telefone Celular: ${data.capitao.telefone}`, margin + 4, y); y += 6;
   doc.text(`-  RG Ou CPF: ${data.capitao.documento}`, margin + 4, y); y += 10;
 
   // 2º PESCADOR
   const p2 = data.segundoPescador && data.segundoPescador.nome && data.segundoPescador.nome.trim() ? data.segundoPescador : null;
+  const p2Cid = p2 ? (p2.cidade || p2.cidadeEstado || "-") : "-";
+  const p2Est = p2 ? (p2.estado || "-") : "-";
   doc.text(`-  Nome completo do 2º Pescador: ${p2 ? p2.nome : "(Não informado)"}`, margin + 4, y); y += 6;
-  doc.text(`-  Cidade e Estado: ${p2 ? p2.cidadeEstado : "-"}`, margin + 4, y); y += 6;
+  doc.text(`-  Cidade: ${p2Cid}`, margin + 4, y); y += 6;
+  doc.text(`-  Estado: ${p2Est}`, margin + 4, y); y += 6;
   doc.text(`-  Telefone Celular: ${p2 ? p2.telefone : "-"}`, margin + 4, y); y += 6;
   doc.text(`-  RG Ou CPF: ${p2 ? p2.documento : "-"}`, margin + 4, y); y += 10;
 
   // 3º PESCADOR
   const p3 = data.terceiroPescador && data.terceiroPescador.nome && data.terceiroPescador.nome.trim() ? data.terceiroPescador : null;
+  const p3Cid = p3 ? (p3.cidade || p3.cidadeEstado || "-") : "-";
+  const p3Est = p3 ? (p3.estado || "-") : "-";
   doc.text(`-  Nome completo do 3º Pescador: ${p3 ? p3.nome : "(Não informado)"}`, margin + 4, y); y += 6;
-  doc.text(`-  Cidade e Estado: ${p3 ? p3.cidadeEstado : "-"}`, margin + 4, y); y += 6;
+  doc.text(`-  Cidade: ${p3Cid}`, margin + 4, y); y += 6;
+  doc.text(`-  Estado: ${p3Est}`, margin + 4, y); y += 6;
   doc.text(`-  Telefone Celular: ${p3 ? p3.telefone : "-"}`, margin + 4, y); y += 6;
   doc.text(`-  RG Ou CPF: ${p3 ? p3.documento : "-"}`, margin + 4, y); y += 12;
 
