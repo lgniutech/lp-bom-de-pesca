@@ -291,7 +291,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Cidade / Estado *
+                    Cidade / Estado do Capitão (1º Pescador) *
                   </label>
                   <input
                     type="text"
@@ -359,7 +359,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Cidade / Estado
+                    Cidade / Estado (2º Pescador)
                   </label>
                   <input
                     type="text"
@@ -427,7 +427,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Cidade / Estado
+                    Cidade / Estado (3º Pescador)
                   </label>
                   <input
                     type="text"
