@@ -333,7 +333,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Estado (UF) do Capitão *
+                    Estado (UF) do Capitão (1º Pescador) *
                   </label>
                   <input
                     type="text"
@@ -346,7 +346,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Telefone Celular (com DDD) *
+                    Telefone Celular (com DDD) do Capitão (1º Pescador) *
                   </label>
                   <input
                     type="text"
@@ -359,7 +359,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    RG ou CPF *
+                    RG ou CPF do Capitão (1º Pescador) *
                   </label>
                   <input
                     type="text"
@@ -427,7 +427,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Telefone Celular (com DDD)
+                    Telefone Celular (com DDD) (2º Pescador)
                   </label>
                   <input
                     type="text"
@@ -440,7 +440,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    RG ou CPF
+                    RG ou CPF (2º Pescador)
                   </label>
                   <input
                     type="text"
@@ -508,7 +508,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    Telefone Celular (com DDD)
+                    Telefone Celular (com DDD) (3º Pescador)
                   </label>
                   <input
                     type="text"
@@ -521,7 +521,7 @@ export default function RegistrationModal({ isOpen, onClose }: RegistrationModal
 
                 <div>
                   <label className="block text-xs font-bold text-gray-300 mb-1">
-                    RG ou CPF
+                    RG ou CPF (3º Pescador)
                   </label>
                   <input
                     type="text"
